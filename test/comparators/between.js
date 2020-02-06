@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`between`', () => {
   describe('The value of is equal to or greater than `lowerBound` and equal to or less than `upperBound`', () => {
@@ -15,8 +15,8 @@ describe('`between`', () => {
 
       [{ val: 20 }, { val: 25 }, { val: 30 }]
         .forEach((values) => {
-          const rules = new Rules(config)
-          const { winsAPrize } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { winsAPrize } = rulesRunner.run(values)
 
           assert.equal(winsAPrize, true)
         })
@@ -39,8 +39,8 @@ describe('`between`', () => {
 
           [{ val: 19 }, { val: -19 }, { val: 0 }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { winsAPrize } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { winsAPrize } = rulesRunner.run(values)
 
               assert.equal(winsAPrize, false)
             })
@@ -61,8 +61,8 @@ describe('`between`', () => {
 
           [{ val: 31 }, { val: +31 }, { val: 100 }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { winsAPrize } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { winsAPrize } = rulesRunner.run(values)
 
               assert.equal(winsAPrize, false)
             })
@@ -84,8 +84,8 @@ describe('`between`', () => {
 
           [{ val: 19 }, { val: -19 }, { val: 0 }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { winsAPrize } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { winsAPrize } = rulesRunner.run(values)
 
               assert.equal(winsAPrize, undefined)
             })
@@ -105,8 +105,8 @@ describe('`between`', () => {
 
           [{ val: 31 }, { val: +31 }, { val: 100 }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { winsAPrize } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { winsAPrize } = rulesRunner.run(values)
 
               assert.equal(winsAPrize, undefined)
             })

@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`contains`', () => {
   describe('The value is in `contains`', () => {
@@ -16,8 +16,8 @@ describe('`contains`', () => {
         { job: 'I like Drawing' },
         { job: 'Drawing specialist' }
       ].forEach((values) => {
-        const rules = new Rules(config)
-        const { status: { hasGoodJob } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { hasGoodJob } } = rulesRunner.run(values)
 
         assert.equal(hasGoodJob, true)
       })
@@ -38,8 +38,8 @@ describe('`contains`', () => {
         { job: 'I like painting' },
         { job: 'Painting specialist' }
       ].forEach((values) => {
-        const rules = new Rules(config)
-        const { status: { hasGoodJob } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { hasGoodJob } = {} } = rulesRunner.run(values)
 
         assert.equal(hasGoodJob, undefined)
       })
@@ -62,8 +62,8 @@ describe('`contains`', () => {
           { job: 'I like painting' },
           { job: 'Painting specialist' }
         ].forEach((values) => {
-          const rules = new Rules(config)
-          const { status: { hasGoodJob } = {} } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { status: { hasGoodJob } = {} } = rulesRunner.run(values)
 
           assert.equal(hasGoodJob, false)
         })

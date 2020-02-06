@@ -1,1 +1,1 @@
-module.exports = require('./lib/Rules')
+module.exports = require('./lib')

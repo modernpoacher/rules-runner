@@ -1,7 +1,7 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
-describe('Rules', () => {
+describe('`RulesRunner`', () => {
   describe('Outcome keys end with `[]`', () => {
     it('populates an array of outcomes', () => {
       const config = {
@@ -22,14 +22,16 @@ describe('Rules', () => {
           }
         }
       }
+
       const values = {
         person: {
           age: 20,
           isCitizen: false
         }
       }
-      const rules = new Rules(config)
-      const { errors } = rules.run(values)
+
+      const rulesRunner = new RulesRunner(config)
+      const { errors } = rulesRunner.run(values)
 
       assert.deepEqual(errors, [
         'Must be 21 or older',
@@ -70,8 +72,8 @@ describe('Rules', () => {
         }
       }
 
-      const rules = new Rules(config)
-      const { person: { error } } = rules.run(values)
+      const rulesRunner = new RulesRunner(config)
+      const { person: { error } } = rulesRunner.run(values)
 
       assert.equal(error, 'Must be 21 or older')
     })
@@ -111,8 +113,8 @@ describe('Rules', () => {
         }
       }
 
-      const rules = new Rules(config)
-      const outcomes = rules.run(values)
+      const rulesRunner = new RulesRunner(config)
+      const outcomes = rulesRunner.run(values)
 
       {
         const { person: { error, errors } } = outcomes
@@ -154,8 +156,8 @@ describe('Rules', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { person: { error, errors } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { person: { error, errors } } = rulesRunner.run(values)
 
         assert.equal(error, 'Not home')
         assert.deepEqual(errors, ['Work'])
@@ -202,8 +204,8 @@ describe('Rules', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const outcomes = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const outcomes = rulesRunner.run(values)
 
         {
           const { person: { error, errors } } = outcomes

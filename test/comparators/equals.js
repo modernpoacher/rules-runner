@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`equals`', () => {
   describe('String', () => {
@@ -28,8 +28,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { eligible } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { eligible } } = rulesRunner.run(values)
 
         assert.equal(eligible, 'Walmart-male-scholarship')
       })
@@ -60,8 +60,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { eligible } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { eligible } = {} } = rulesRunner.run(values)
 
         assert.equal(eligible, undefined)
       })
@@ -95,8 +95,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { eligible } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { eligible } = {} } = rulesRunner.run(values)
 
         assert.equal(eligible, 'Walmart-male-scholarship')
       })
@@ -129,8 +129,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { bonus } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { bonus } } = rulesRunner.run(values)
 
         assert.equal(bonus, 500)
       })
@@ -161,8 +161,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { bonus } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { bonus } = {} } = rulesRunner.run(values)
 
         assert.equal(bonus, undefined)
       })
@@ -196,8 +196,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { bonus } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { bonus } = {} } = rulesRunner.run(values)
 
         assert.equal(bonus, 0)
       })
@@ -230,8 +230,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { bonus } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { bonus } } = rulesRunner.run(values)
 
         assert.equal(bonus, 500)
       })
@@ -262,8 +262,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { bonus } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { bonus } = {} } = rulesRunner.run(values)
 
         assert.equal(bonus, undefined)
       })
@@ -297,8 +297,8 @@ describe('`equals`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { bonus } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { bonus } = {} } = rulesRunner.run(values)
 
         assert.equal(bonus, 0)
       })
@@ -320,9 +320,9 @@ describe('`equals`', () => {
 
       const values = { person: { profile: null } }
 
-      const rules = new Rules(config)
+      const rulesRunner = new RulesRunner(config)
 
-      assert.throws(() => rules.run(values)) // , 'Throws `Expectation is null`')
+      assert.throws(() => rulesRunner.run(values)) // , 'Throws `Expectation is null`')
     })
   })
 
@@ -341,9 +341,9 @@ describe('`equals`', () => {
 
       const values = { person: { profile: undefined } }
 
-      const rules = new Rules(config)
+      const rulesRunner = new RulesRunner(config)
 
-      assert.throws(() => rules.run(values)) // , 'Unknown comparator "undefined"')
+      assert.throws(() => rulesRunner.run(values)) // , 'Unknown comparator "undefined"')
     })
   })
 })

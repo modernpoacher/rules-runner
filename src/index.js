@@ -1,9 +1,10 @@
 import cloneDeep from 'clone-deep'
 import objectPath from 'object-path'
-import { isBoolean } from './common'
+import {
+  isBoolean,
+  isObject
+} from './common'
 import * as comparators from './comparators'
-
-const isObject = (v) => (v || false).constructor === Object && !Array.isArray(v)
 
 const hasArrayKey = (key) => /^(.*)\[\]$/.test(key)
 

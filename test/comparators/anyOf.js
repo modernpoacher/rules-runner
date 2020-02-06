@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`anyOf`', () => {
   describe('The value is an item in `anyOf`', () => {
@@ -15,8 +15,8 @@ describe('`anyOf`', () => {
 
       [{ val: 1 }, { val: 'a' }, { val: true }]
         .forEach((values) => {
-          const rules = new Rules(config)
-          const { winsAPrize } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { winsAPrize } = rulesRunner.run(values)
 
           assert.equal(winsAPrize, true)
         })
@@ -36,8 +36,8 @@ describe('`anyOf`', () => {
 
       [{ val: 2 }, { val: 'b' }, { val: NaN }]
         .forEach((values) => {
-          const rules = new Rules(config)
-          const { winsAPrize } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { winsAPrize } = rulesRunner.run(values)
 
           assert.equal(winsAPrize, undefined)
         })
@@ -59,8 +59,8 @@ describe('`anyOf`', () => {
 
         [{ val: 2 }, { val: 'b' }, { val: NaN }]
           .forEach((values) => {
-            const rules = new Rules(config)
-            const { winsAPrize } = rules.run(values)
+            const rulesRunner = new RulesRunner(config)
+            const { winsAPrize } = rulesRunner.run(values)
 
             assert.equal(winsAPrize, false)
           })

@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`matches`', () => {
   describe('`matches` is a regular expression', () => {
@@ -17,8 +17,8 @@ describe('`matches`', () => {
 
           [{ val: 'john' }, { val: 'bob' }, { val: 'mary' }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { hasGreatName } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { hasGreatName } = rulesRunner.run(values)
 
               assert.equal(hasGreatName, true)
             })
@@ -38,8 +38,8 @@ describe('`matches`', () => {
 
           [{ val: 'John' }, { val: 'Bob' }, { val: 'Mary' }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { hasGreatName } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { hasGreatName } = rulesRunner.run(values)
 
               assert.equal(hasGreatName, true)
             })
@@ -61,8 +61,8 @@ describe('`matches`', () => {
 
           [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { hasGreatName } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { hasGreatName } = rulesRunner.run(values)
 
               assert.equal(hasGreatName, undefined)
             })
@@ -82,8 +82,8 @@ describe('`matches`', () => {
 
           [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { hasGreatName } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { hasGreatName } = rulesRunner.run(values)
 
               assert.equal(hasGreatName, undefined)
             })
@@ -107,8 +107,8 @@ describe('`matches`', () => {
 
             [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
               .forEach((values) => {
-                const rules = new Rules(config)
-                const { hasGreatName } = rules.run(values)
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
 
                 assert.equal(hasGreatName, false)
               })
@@ -129,8 +129,8 @@ describe('`matches`', () => {
 
             [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
               .forEach((values) => {
-                const rules = new Rules(config)
-                const { hasGreatName } = rules.run(values)
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
 
                 assert.equal(hasGreatName, false)
               })
@@ -155,8 +155,8 @@ describe('`matches`', () => {
 
           [{ val: 'john' }, { val: 'bob' }, { val: 'mary' }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { hasGreatName } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { hasGreatName } = rulesRunner.run(values)
 
               assert.equal(hasGreatName, true)
             })
@@ -176,8 +176,8 @@ describe('`matches`', () => {
 
           [{ val: 'John' }, { val: 'Bob' }, { val: 'Mary' }]
             .forEach((values) => {
-              const rules = new Rules(config)
-              const { hasGreatName } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { hasGreatName } = rulesRunner.run(values)
 
               assert.equal(hasGreatName, true)
             })
@@ -198,8 +198,8 @@ describe('`matches`', () => {
 
         [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
           .forEach((values) => {
-            const rules = new Rules(config)
-            const { hasGreatName } = rules.run(values)
+            const rulesRunner = new RulesRunner(config)
+            const { hasGreatName } = rulesRunner.run(values)
 
             assert.equal(hasGreatName, undefined)
           })
@@ -222,8 +222,8 @@ describe('`matches`', () => {
 
             [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
               .forEach((values) => {
-                const rules = new Rules(config)
-                const { hasGreatName } = rules.run(values)
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
 
                 assert.equal(hasGreatName, false)
               })
@@ -244,8 +244,8 @@ describe('`matches`', () => {
 
             [{ val: 'Juanito' }, { val: 'Frank' }, { val: 'Beatrice' }]
               .forEach((values) => {
-                const rules = new Rules(config)
-                const { hasGreatName } = rules.run(values)
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
 
                 assert.equal(hasGreatName, false)
               })

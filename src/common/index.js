@@ -1,10 +1,12 @@
+export const isBoolean = (v) => (typeof v === 'boolean' || v === 'true' || v === 'false')
+
+export const isObject = (v) => (v || false).constructor === Object && !Array.isArray(v)
+
 export function toNull (v) {
   if (v === null || v === 'null') return null
 
   throw new Error('Invalid `null`')
 }
-
-export const isBoolean = (v) => (typeof v === 'boolean' || v === 'true' || v === 'false')
 
 export function toRegExp (v) {
   if (v instanceof RegExp) return v

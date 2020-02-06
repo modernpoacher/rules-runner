@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`boolean`', () => {
   describe('The value is `true`', () => {
@@ -21,8 +21,8 @@ describe('`boolean`', () => {
         }
       }
 
-      const rules = new Rules(config)
-      const { status: { getsPaid } } = rules.run(values)
+      const rulesRunner = new RulesRunner(config)
+      const { status: { getsPaid } } = rulesRunner.run(values)
 
       assert.equal(getsPaid, true)
     })
@@ -49,8 +49,8 @@ describe('`boolean`', () => {
         }
       }
 
-      const rules = new Rules(config)
-      const { status: { getsPaid } } = rules.run(values)
+      const rulesRunner = new RulesRunner(config)
+      const { status: { getsPaid } } = rulesRunner.run(values)
 
       assert.equal(getsPaid, false)
     })
@@ -79,8 +79,8 @@ describe('`boolean`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { getsPaid } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { getsPaid } } = rulesRunner.run(values)
 
         assert.equal(getsPaid, false)
       })
@@ -110,8 +110,8 @@ describe('`boolean`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { getsPaid } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { getsPaid } } = rulesRunner.run(values)
 
         assert.equal(getsPaid, true)
       })
@@ -138,8 +138,8 @@ describe('`boolean`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { getsPaid } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { getsPaid } = {} } = rulesRunner.run(values)
 
         assert.equal(getsPaid, undefined)
       })
@@ -166,8 +166,8 @@ describe('`boolean`', () => {
           }
         }
 
-        const rules = new Rules(config)
-        const { status: { getsPaid } = {} } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { status: { getsPaid } = {} } = rulesRunner.run(values)
 
         assert.equal(getsPaid, undefined)
       })

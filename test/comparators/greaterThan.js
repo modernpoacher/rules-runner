@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Rules from '@modernpoacher/rules-runner/Rules'
+import RulesRunner from '@modernpoacher/rules-runner'
 
 describe('`greaterThan`', () => {
   describe('The value is greater than `greaterThan`', () => {
@@ -15,8 +15,8 @@ describe('`greaterThan`', () => {
 
       const values = { person: { age: 26 } }
 
-      const rules = new Rules(config)
-      const { person: { getsBonus } } = rules.run(values)
+      const rulesRunner = new RulesRunner(config)
+      const { person: { getsBonus } } = rulesRunner.run(values)
 
       assert.equal(getsBonus, true)
     })
@@ -36,8 +36,8 @@ describe('`greaterThan`', () => {
 
         const values = { person: { age: 25 } }
 
-        const rules = new Rules(config)
-        const { person: { getsBonus } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { person: { getsBonus } } = rulesRunner.run(values)
 
         assert.equal(getsBonus, undefined)
       })
@@ -56,8 +56,8 @@ describe('`greaterThan`', () => {
 
         const values = { person: { age: 24 } }
 
-        const rules = new Rules(config)
-        const { person: { getsBonus } } = rules.run(values)
+        const rulesRunner = new RulesRunner(config)
+        const { person: { getsBonus } } = rulesRunner.run(values)
 
         assert.equal(getsBonus, undefined)
       })
@@ -80,8 +80,8 @@ describe('`greaterThan`', () => {
 
           const values = { person: { age: 25 } }
 
-          const rules = new Rules(config)
-          const { person: { getsBonus } } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { person: { getsBonus } } = rulesRunner.run(values)
 
           assert.equal(getsBonus, false)
         })
@@ -101,8 +101,8 @@ describe('`greaterThan`', () => {
 
           const values = { person: { age: 24 } }
 
-          const rules = new Rules(config)
-          const { person: { getsBonus } } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { person: { getsBonus } } = rulesRunner.run(values)
 
           assert.equal(getsBonus, false)
         })
@@ -125,8 +125,8 @@ describe('`greaterThan`', () => {
 
           const values = { person: { age: '26' } }
 
-          const rules = new Rules(config)
-          const { person: { getsBonus } } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { person: { getsBonus } } = rulesRunner.run(values)
 
           assert.equal(getsBonus, true)
         })
@@ -146,8 +146,8 @@ describe('`greaterThan`', () => {
 
             const values = { person: { age: '25' } }
 
-            const rules = new Rules(config)
-            const { person: { getsBonus } } = rules.run(values)
+            const rulesRunner = new RulesRunner(config)
+            const { person: { getsBonus } } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -166,8 +166,8 @@ describe('`greaterThan`', () => {
 
             const values = { person: { age: '24' } }
 
-            const rules = new Rules(config)
-            const { person: { getsBonus } } = rules.run(values)
+            const rulesRunner = new RulesRunner(config)
+            const { person: { getsBonus } } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -190,8 +190,8 @@ describe('`greaterThan`', () => {
 
               const values = { person: { age: '25' } }
 
-              const rules = new Rules(config)
-              const { person: { getsBonus } } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { person: { getsBonus } } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -211,8 +211,8 @@ describe('`greaterThan`', () => {
 
               const values = { person: { age: '24' } }
 
-              const rules = new Rules(config)
-              const { person: { getsBonus } } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { person: { getsBonus } } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -235,8 +235,8 @@ describe('`greaterThan`', () => {
 
           const values = { person: { age: '26.225' } }
 
-          const rules = new Rules(config)
-          const { person: { getsBonus } } = rules.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { person: { getsBonus } } = rulesRunner.run(values)
 
           assert.equal(getsBonus, true)
         })
@@ -256,8 +256,8 @@ describe('`greaterThan`', () => {
 
             const values = { person: { age: '25.225' } }
 
-            const rules = new Rules(config)
-            const { person: { getsBonus } } = rules.run(values)
+            const rulesRunner = new RulesRunner(config)
+            const { person: { getsBonus } } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -276,8 +276,8 @@ describe('`greaterThan`', () => {
 
             const values = { person: { age: '24.225' } }
 
-            const rules = new Rules(config)
-            const { person: { getsBonus } } = rules.run(values)
+            const rulesRunner = new RulesRunner(config)
+            const { person: { getsBonus } } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -300,8 +300,8 @@ describe('`greaterThan`', () => {
 
               const values = { person: { age: '25.225' } }
 
-              const rules = new Rules(config)
-              const { person: { getsBonus } } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { person: { getsBonus } } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -321,8 +321,8 @@ describe('`greaterThan`', () => {
 
               const values = { person: { age: '24.225' } }
 
-              const rules = new Rules(config)
-              const { person: { getsBonus } } = rules.run(values)
+              const rulesRunner = new RulesRunner(config)
+              const { person: { getsBonus } } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -344,9 +344,9 @@ describe('`greaterThan`', () => {
 
         const values = { person: { age: 'Twenty-Five' } }
 
-        const rules = new Rules(config)
+        const rulesRunner = new RulesRunner(config)
 
-        assert.throws(() => rules.run(values))
+        assert.throws(() => rulesRunner.run(values))
       })
     })
   })
@@ -364,9 +364,9 @@ describe('`greaterThan`', () => {
 
       const values = { person: { age: undefined } }
 
-      const rules = new Rules(config)
+      const rulesRunner = new RulesRunner(config)
 
-      assert.throws(() => rules.run(values))
+      assert.throws(() => rulesRunner.run(values))
     })
   })
 
@@ -383,9 +383,9 @@ describe('`greaterThan`', () => {
 
       const values = { person: { age: null } }
 
-      const rules = new Rules(config)
+      const rulesRunner = new RulesRunner(config)
 
-      assert.throws(() => rules.run(values))
+      assert.throws(() => rulesRunner.run(values))
     })
   })
 })
