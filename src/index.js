@@ -67,7 +67,7 @@ export default class RulesRunner {
   }
 
   runTest (expected = {}, ...args) {
-    if (expected === null) throw new Error('Expectation is null')
+    if (expected === null) throw new Error('Expectation is `null`')
 
     if (isObject(expected)) {
       const [
