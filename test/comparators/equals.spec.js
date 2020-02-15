@@ -68,37 +68,74 @@ describe('`equals`', () => {
     })
 
     describe('Otherwise', () => {
-      it('populates the outcomes', () => {
-        const config = {
-          'Walmart Males are eligible for Walmart-male-scholarship': {
-            if: {
-              'person.profile.gender': 'F',
-              'company.name': 'Walmart'
-            },
-            then: {
-              'status.eligible': 'Walmart-female-scholarship'
-            },
-            otherwise: {
-              'status.eligible': 'Walmart-male-scholarship'
+      describe('The value is equal to `equals`', () => {
+        it('populates the outcomes', () => {
+          const config = {
+            'Walmart Males are eligible for Walmart-male-scholarship': {
+              if: {
+                'person.profile.gender': 'M',
+                'company.name': 'Walmart'
+              },
+              then: {
+                'status.eligible': 'Walmart-male-scholarship'
+              },
+              otherwise: {
+                'status.eligible': 'Walmart-male-scholarship'
+              }
             }
           }
-        }
 
-        const values = {
-          person: {
-            profile: {
-              gender: 'M'
+          const values = {
+            person: {
+              profile: {
+                gender: 'M'
+              }
+            },
+            company: {
+              name: 'Walmart'
             }
-          },
-          company: {
-            name: 'Walmart'
           }
-        }
 
-        const rulesRunner = new RulesRunner(config)
-        const { status: { eligible } = {} } = rulesRunner.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { status: { eligible } } = rulesRunner.run(values)
 
-        assert.equal(eligible, 'Walmart-male-scholarship')
+          assert.equal(eligible, 'Walmart-male-scholarship')
+        })
+      })
+
+      describe('The value is not equal to `equals`', () => {
+        it('populates the outcomes', () => {
+          const config = {
+            'Walmart Males are eligible for Walmart-male-scholarship': {
+              if: {
+                'person.profile.gender': 'F',
+                'company.name': 'Walmart'
+              },
+              then: {
+                'status.eligible': 'Walmart-female-scholarship'
+              },
+              otherwise: {
+                'status.eligible': 'Walmart-male-scholarship'
+              }
+            }
+          }
+
+          const values = {
+            person: {
+              profile: {
+                gender: 'M'
+              }
+            },
+            company: {
+              name: 'Walmart'
+            }
+          }
+
+          const rulesRunner = new RulesRunner(config)
+          const { status: { eligible } = {} } = rulesRunner.run(values)
+
+          assert.equal(eligible, 'Walmart-male-scholarship')
+        })
       })
     })
   })
@@ -169,37 +206,73 @@ describe('`equals`', () => {
     })
 
     describe('Otherwise', () => {
-      it('populates the outcomes', () => {
-        const config = {
-          '25 Year Old Employees of Walmart Get a Bonus': {
-            if: {
-              'person.profile.age': 25,
-              'company.name': 'Walmart'
-            },
-            then: {
-              'status.bonus': 500
-            },
-            otherwise: {
-              'status.bonus': 0
+      describe('The value is equal to `equals`', () => {
+        it('populates the outcomes', () => {
+          const config = {
+            '25 Year Old Employees of Walmart Get a Bonus': {
+              if: {
+                'person.profile.age': 25,
+                'company.name': 'Walmart'
+              },
+              then: {
+                'status.bonus': 500
+              },
+              otherwise: {
+                'status.bonus': 0
+              }
             }
           }
-        }
 
-        const values = {
-          person: {
-            profile: {
-              age: 26
+          const values = {
+            person: {
+              profile: {
+                age: 25
+              }
+            },
+            company: {
+              name: 'Walmart'
             }
-          },
-          company: {
-            name: 'Walmart'
           }
-        }
 
-        const rulesRunner = new RulesRunner(config)
-        const { status: { bonus } = {} } = rulesRunner.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { status: { bonus } } = rulesRunner.run(values)
 
-        assert.equal(bonus, 0)
+          assert.equal(bonus, 500)
+        })
+      })
+      describe('The value is not equal to `equals`', () => {
+        it('populates the outcomes', () => {
+          const config = {
+            '25 Year Old Employees of Walmart Get a Bonus': {
+              if: {
+                'person.profile.age': 25,
+                'company.name': 'Walmart'
+              },
+              then: {
+                'status.bonus': 500
+              },
+              otherwise: {
+                'status.bonus': 0
+              }
+            }
+          }
+
+          const values = {
+            person: {
+              profile: {
+                age: 26
+              }
+            },
+            company: {
+              name: 'Walmart'
+            }
+          }
+
+          const rulesRunner = new RulesRunner(config)
+          const { status: { bonus } = {} } = rulesRunner.run(values)
+
+          assert.equal(bonus, 0)
+        })
       })
     })
   })
@@ -270,37 +343,73 @@ describe('`equals`', () => {
     })
 
     describe('Otherwise', () => {
-      it('populates the outcomes', () => {
-        const config = {
-          '25 Year Old Employees of Walmart Get a Bonus': {
-            if: {
-              'person.profile.living': true,
-              'company.name': 'Walmart'
-            },
-            then: {
-              'status.bonus': 500
-            },
-            otherwise: {
-              'status.bonus': 0
+      describe('The value is equal to `equals`', () => {
+        it('populates the outcomes', () => {
+          const config = {
+            '25 Year Old Employees of Walmart Get a Bonus': {
+              if: {
+                'person.profile.alive': true,
+                'company.name': 'Walmart'
+              },
+              then: {
+                'status.bonus': 500
+              },
+              otherwise: {
+                'status.bonus': 0
+              }
             }
           }
-        }
 
-        const values = {
-          person: {
-            profile: {
-              living: false
+          const values = {
+            person: {
+              profile: {
+                alive: true
+              }
+            },
+            company: {
+              name: 'Walmart'
             }
-          },
-          company: {
-            name: 'Walmart'
           }
-        }
 
-        const rulesRunner = new RulesRunner(config)
-        const { status: { bonus } = {} } = rulesRunner.run(values)
+          const rulesRunner = new RulesRunner(config)
+          const { status: { bonus } } = rulesRunner.run(values)
 
-        assert.equal(bonus, 0)
+          assert.equal(bonus, 500)
+        })
+      })
+      describe('The value is not equal to `equals`', () => {
+        it('populates the outcomes', () => {
+          const config = {
+            '25 Year Old Employees of Walmart Get a Bonus': {
+              if: {
+                'person.profile.living': true,
+                'company.name': 'Walmart'
+              },
+              then: {
+                'status.bonus': 500
+              },
+              otherwise: {
+                'status.bonus': 0
+              }
+            }
+          }
+
+          const values = {
+            person: {
+              profile: {
+                living: false
+              }
+            },
+            company: {
+              name: 'Walmart'
+            }
+          }
+
+          const rulesRunner = new RulesRunner(config)
+          const { status: { bonus } = {} } = rulesRunner.run(values)
+
+          assert.equal(bonus, 0)
+        })
       })
     })
   })

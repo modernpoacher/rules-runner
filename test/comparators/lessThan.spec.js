@@ -65,6 +65,27 @@ describe('`lessThan`', () => {
   })
 
   describe('Otherwise', () => {
+    describe('The value is less than `lessThan`', () => {
+      it('populates the outcomes', () => {
+        const config = {
+          'Younger than 25 gets a bonus': {
+            if: {
+              'person.age': { lessThan: 25 }
+            },
+            then: { 'person.getsBonus': true },
+            otherwise: { 'person.getsBonus': false }
+          }
+        }
+
+        const values = { person: { age: 24 } }
+
+        const rulesRunner = new RulesRunner(config)
+        const { person: { getsBonus } } = rulesRunner.run(values)
+
+        assert.equal(getsBonus, true)
+      })
+    })
+
     describe('The value is not less than `lessThan`', () => {
       describe('The value is equal to `lessThan`', () => {
         it('populates the outcomes', () => {
@@ -175,6 +196,27 @@ describe('`lessThan`', () => {
       })
 
       describe('Otherwise', () => {
+        describe('The value is less than `lessThan`', () => {
+          it('populates the outcomes', () => {
+            const config = {
+              'Younger than 25 gets a bonus': {
+                if: {
+                  'person.age': { lessThan: 25 }
+                },
+                then: { 'person.getsBonus': true },
+                otherwise: { 'person.getsBonus': false }
+              }
+            }
+
+            const values = { person: { age: '24' } }
+
+            const rulesRunner = new RulesRunner(config)
+            const { person: { getsBonus } } = rulesRunner.run(values)
+
+            assert.equal(getsBonus, true)
+          })
+        })
+
         describe('The value is not less than `lessThan`', () => {
           describe('The value is equal to `lessThan`', () => {
             it('populates the outcomes', () => {
@@ -285,6 +327,27 @@ describe('`lessThan`', () => {
       })
 
       describe('Otherwise', () => {
+        describe('The value is less than `lessThan`', () => {
+          it('populates the outcomes', () => {
+            const config = {
+              'Younger than 25 gets a bonus': {
+                if: {
+                  'person.age': { lessThan: 25.225 }
+                },
+                then: { 'person.getsBonus': true },
+                otherwise: { 'person.getsBonus': false }
+              }
+            }
+
+            const values = { person: { age: '24.225' } }
+
+            const rulesRunner = new RulesRunner(config)
+            const { person: { getsBonus } } = rulesRunner.run(values)
+
+            assert.equal(getsBonus, true)
+          })
+        })
+
         describe('The value is not less than `lessThan`', () => {
           describe('The value is equal to `lessThan`', () => {
             it('populates the outcomes', () => {

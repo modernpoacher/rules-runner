@@ -133,6 +133,50 @@ describe('`RulesRunner`', () => {
   })
 
   describe('Otherwise', () => {
+    describe('Outcome keys end with `[]`', () => {
+      it('populates an array of outcomes', () => {
+        const config = {
+          'Must be 21 or older': {
+            if: {
+              'person.age': { lessThan: 21 }
+            },
+            then: {
+              'errors[]': 'Must be 21 or older'
+            },
+            otherwise: {
+              ofAge: true
+            }
+          },
+          'Must be employed': {
+            if: {
+              'person.isCitizen': false
+            },
+            then: {
+              'errors[]': 'Must be a citizen'
+            },
+            otherwise: {
+              isCitizen: true
+            }
+          }
+        }
+
+        const values = {
+          person: {
+            age: 20,
+            isCitizen: false
+          }
+        }
+
+        const rulesRunner = new RulesRunner(config)
+        const { errors } = rulesRunner.run(values)
+
+        assert.deepEqual(errors, [
+          'Must be 21 or older',
+          'Must be a citizen'
+        ])
+      })
+    })
+
     describe('Outcome keys do not end with `[]`', () => {
       it('populates the outcomes', () => {
         const config = {

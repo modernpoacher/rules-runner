@@ -7,13 +7,13 @@ describe('`anyOf`', () => {
       const config = {
         'Any of these values win a prize': {
           if: {
-            val: { anyOf: [1, 'a', true] }
+            any: { anyOf: [1, 'a', true] }
           },
           then: { winsAPrize: true }
         }
       };
 
-      [{ val: 1 }, { val: 'a' }, { val: true }]
+      [{ any: 1 }, { any: 'a' }, { any: true }]
         .forEach((values) => {
           const rulesRunner = new RulesRunner(config)
           const { winsAPrize } = rulesRunner.run(values)
@@ -28,13 +28,13 @@ describe('`anyOf`', () => {
       const config = {
         'Any of these values win a prize': {
           if: {
-            val: { anyOf: [1, 'a', undefined] }
+            any: { anyOf: [1, 'a', undefined] }
           },
           then: { winsAPrize: true }
         }
       };
 
-      [{ val: 2 }, { val: 'b' }, { val: NaN }]
+      [{ any: 2 }, { any: 'b' }, { any: NaN }]
         .forEach((values) => {
           const rulesRunner = new RulesRunner(config)
           const { winsAPrize } = rulesRunner.run(values)
@@ -45,19 +45,41 @@ describe('`anyOf`', () => {
   })
 
   describe('Otherwise', () => {
-    describe('The value is not an item in `anyOf`', () => {
+    describe('The value is an item in `anyOf`', () => {
       it('populates the outcome', () => {
         const config = {
           'Any of these values win a prize': {
             if: {
-              val: { anyOf: [1, 'a', undefined] }
+              any: { anyOf: [1, 'a', true] }
             },
             then: { winsAPrize: true },
             otherwise: { winsAPrize: false }
           }
         };
 
-        [{ val: 2 }, { val: 'b' }, { val: NaN }]
+        [{ any: 1 }, { any: 'a' }, { any: true }]
+          .forEach((values) => {
+            const rulesRunner = new RulesRunner(config)
+            const { winsAPrize } = rulesRunner.run(values)
+
+            assert.equal(winsAPrize, true)
+          })
+      })
+    })
+
+    describe('The value is not an item in `anyOf`', () => {
+      it('populates the outcome', () => {
+        const config = {
+          'Any of these values win a prize': {
+            if: {
+              any: { anyOf: [1, 'a', undefined] }
+            },
+            then: { winsAPrize: true },
+            otherwise: { winsAPrize: false }
+          }
+        };
+
+        [{ any: 2 }, { any: 'b' }, { any: NaN }]
           .forEach((values) => {
             const rulesRunner = new RulesRunner(config)
             const { winsAPrize } = rulesRunner.run(values)

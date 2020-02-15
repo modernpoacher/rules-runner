@@ -92,6 +92,52 @@ describe('`matches`', () => {
     })
 
     describe('Otherwise', () => {
+      describe('The value is matched by the regular expression', () => {
+        describe('With flags', () => {
+          it('populates the outcomes', () => {
+            const config = {
+              'Any of these people have great names': {
+                if: {
+                  val: { matches: /(John|Bob|Mary)/i }
+                },
+                then: { hasGreatName: true },
+                otherwise: { hasGreatName: false }
+              }
+            };
+
+            [{ val: 'john' }, { val: 'bob' }, { val: 'mary' }]
+              .forEach((values) => {
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
+
+                assert.equal(hasGreatName, true)
+              })
+          })
+        })
+
+        describe('Without flags', () => {
+          it('populates the outcomes', () => {
+            const config = {
+              'Any of these people have great names': {
+                if: {
+                  val: { matches: /(John|Bob|Mary)/ }
+                },
+                then: { hasGreatName: true },
+                otherwise: { hasGreatName: false }
+              }
+            };
+
+            [{ val: 'John' }, { val: 'Bob' }, { val: 'Mary' }]
+              .forEach((values) => {
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
+
+                assert.equal(hasGreatName, true)
+              })
+          })
+        })
+      })
+
       describe('The value is not matched by the regular expression', () => {
         describe('With flags', () => {
           it('populates the outcomes', () => {
@@ -207,6 +253,52 @@ describe('`matches`', () => {
     })
 
     describe('Otherwise', () => {
+      describe('The value is matched by the regular expression', () => {
+        describe('With flags', () => {
+          it('populates the outcomes', () => {
+            const config = {
+              'Any of these people have great names': {
+                if: {
+                  val: { matches: '/(John|Bob|Mary)/i' }
+                },
+                then: { hasGreatName: true },
+                otherwise: { hasGreatName: false }
+              }
+            };
+
+            [{ val: 'john' }, { val: 'bob' }, { val: 'mary' }]
+              .forEach((values) => {
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
+
+                assert.equal(hasGreatName, true)
+              })
+          })
+        })
+
+        describe('Without flags', () => {
+          it('populates the outcomes', () => {
+            const config = {
+              'Any of these people have great names': {
+                if: {
+                  val: { matches: '/(John|Bob|Mary)/' }
+                },
+                then: { hasGreatName: true },
+                otherwise: { hasGreatName: false }
+              }
+            };
+
+            [{ val: 'John' }, { val: 'Bob' }, { val: 'Mary' }]
+              .forEach((values) => {
+                const rulesRunner = new RulesRunner(config)
+                const { hasGreatName } = rulesRunner.run(values)
+
+                assert.equal(hasGreatName, true)
+              })
+          })
+        })
+      })
+
       describe('The value is not matched by the regular expression', () => {
         describe('With flags', () => {
           it('populates the outcomes', () => {

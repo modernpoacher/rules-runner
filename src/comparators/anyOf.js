@@ -1,5 +1,5 @@
-export default function ({ anyOf } = {}, actual) {
-  if (Array.isArray(anyOf)) return anyOf.includes(actual)
+export default function ({ anyOf: values = null } = {}, actual) {
+  if (!Array.isArray(values)) throw new Error(`"${values}" is not an array`)
 
-  throw new Error(`"${anyOf}" is not an array`)
+  return values.includes(actual)
 }
