@@ -5,7 +5,7 @@ describe('`oneOf`', () => {
   describe('One item is an item in `oneOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'One of these values win a prize': {
+        'One of these values wins a prize': {
           if: {
             one: { oneOf: [1, 'a', true] }
           },
@@ -25,7 +25,7 @@ describe('`oneOf`', () => {
   describe('No item is an item in `oneOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'One of these values win a prize': {
+        'One of these values wins a prize': {
           if: {
             one: { oneOf: [1, 'a', true] }
           },
@@ -45,7 +45,7 @@ describe('`oneOf`', () => {
   describe('Every item is an item in `oneOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'One of these values win a prize': {
+        'One of these values wins a prize': {
           if: {
             one: { oneOf: [1, 'a', true] }
           },
@@ -66,7 +66,7 @@ describe('`oneOf`', () => {
     describe('One item is an item in `oneOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'One of these values win a prize': {
+          'One of these values wins a prize': {
             if: {
               one: { oneOf: [1, 'a', true] }
             },
@@ -87,7 +87,7 @@ describe('`oneOf`', () => {
     describe('No item is an item in `oneOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'One of these values win a prize': {
+          'One of these values wins a prize': {
             if: {
               one: { oneOf: [1, 'a', true] }
             },
@@ -107,7 +107,7 @@ describe('`oneOf`', () => {
     describe('Every item is an item in `oneOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'One of these values win a prize': {
+          'One of these values wins a prize': {
             if: {
               one: { oneOf: [1, 'a', true] }
             },

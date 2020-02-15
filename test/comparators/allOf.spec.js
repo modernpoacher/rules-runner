@@ -5,7 +5,7 @@ describe('`allOf`', () => {
   describe('Every item is an item in `allOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'Any of these values win a prize': {
+        'All of these values wins a prize': {
           if: {
             all: { allOf: [1, 'a', true] }
           },
@@ -25,7 +25,7 @@ describe('`allOf`', () => {
   describe('No item is an item in `allOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'Any of these values win a prize': {
+        'All of these values wins a prize': {
           if: {
             all: { allOf: [1, 'a', undefined] }
           },
@@ -45,7 +45,7 @@ describe('`allOf`', () => {
   describe('One item is an item in `allOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'Any of these values win a prize': {
+        'All of these values wins a prize': {
           if: {
             all: { allOf: [1, 'a', true] }
           },
@@ -66,7 +66,7 @@ describe('`allOf`', () => {
     describe('Every item is an item in `allOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'Any of these values win a prize': {
+          'All of these values wins a prize': {
             if: {
               all: { allOf: [1, 'a', true] }
             },
@@ -87,7 +87,7 @@ describe('`allOf`', () => {
     describe('No item is an item in `allOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'Any of these values win a prize': {
+          'All of these values wins a prize': {
             if: {
               all: { allOf: [1, 'a', undefined] }
             },
@@ -107,7 +107,7 @@ describe('`allOf`', () => {
     describe('One item is an item in `allOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'Any of these values win a prize': {
+          'All of these values wins a prize': {
             if: {
               all: { allOf: [1, 'a', true] }
             },
