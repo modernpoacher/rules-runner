@@ -52,13 +52,13 @@ export default class RulesRunner {
     )
   }
 
-  runTests (expectations = {}, accumulator = {}) {
+  runTests (expectations = {}, values = {}) {
     return (
       Object
         .entries(expectations)
         .every(([key, expectation]) => {
-          if (objectPath.has(accumulator, key)) {
-            const actual = objectPath.get(accumulator, key)
+          if (objectPath.has(values, key)) {
+            const actual = objectPath.get(values, key)
 
             return this.runTest(expectation, actual)
           }
@@ -68,7 +68,7 @@ export default class RulesRunner {
     )
   }
 
-  runTest (expectation, ...args) {
+  runTest (expectation, ...actual) {
     if (expectation === null) throw new Error('Expectation is `null`')
     if (expectation === undefined) throw new Error('Expectation is `undefined`')
 
@@ -80,7 +80,7 @@ export default class RulesRunner {
             if (Reflect.has(comparators, key)) {
               const comparator = Reflect.get(comparators, key)
 
-              return comparator.call(this, { [key]: value }, ...args)
+              return comparator.call(this, { [key]: value }, ...actual)
             }
 
             throw new Error(`Unknown comparator "${key}"`)
@@ -93,14 +93,14 @@ export default class RulesRunner {
         boolean
       } = comparators
 
-      return boolean.call(this, expectation, ...args)
+      return boolean.call(this, expectation, ...actual)
     }
 
     const {
       equals
     } = comparators
 
-    return equals.call(this, expectation, ...args)
+    return equals.call(this, expectation, ...actual)
   }
 
   runOutcomes (outcomes = {}, accumulator = {}) {

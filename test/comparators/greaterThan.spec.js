@@ -267,7 +267,7 @@ describe('`greaterThan`', () => {
       describe('The value is greater than `greaterThan`', () => {
         it('populates the outcomes', () => {
           const config = {
-            'Older than 25 gets a bonus': {
+            'Older than 25.225 gets a bonus': {
               if: {
                 'person.age': { greaterThan: 25.225 }
               },
@@ -288,7 +288,7 @@ describe('`greaterThan`', () => {
         describe('The value is equal to `greaterThan`', () => {
           it('populates the outcomes', () => {
             const config = {
-              'Older than 25 gets a bonus': {
+              'Older than 25.225 gets a bonus': {
                 if: {
                   'person.age': { greaterThan: 25.225 }
                 },
@@ -308,7 +308,7 @@ describe('`greaterThan`', () => {
         describe('The value is less than `greaterThan`', () => {
           it('populates the outcomes', () => {
             const config = {
-              'Older than 25 gets a bonus': {
+              'Older than 25.225 gets a bonus': {
                 if: {
                   'person.age': { greaterThan: 25.225 }
                 },
@@ -330,7 +330,7 @@ describe('`greaterThan`', () => {
         describe('The value is greater than `greaterThan`', () => {
           it('populates the outcomes', () => {
             const config = {
-              'Older than 25 gets a bonus': {
+              'Older than 25.225 gets a bonus': {
                 if: {
                   'person.age': { greaterThan: 25.225 }
                 },
@@ -352,7 +352,7 @@ describe('`greaterThan`', () => {
           describe('The value is equal to `greaterThan`', () => {
             it('populates the outcomes', () => {
               const config = {
-                'Older than 25 gets a bonus': {
+                'Older than 25.225 gets a bonus': {
                   if: {
                     'person.age': { greaterThan: 25.225 }
                   },
@@ -373,7 +373,7 @@ describe('`greaterThan`', () => {
           describe('The value is less than `greaterThan`', () => {
             it('populates the outcomes', () => {
               const config = {
-                'Older than 25 gets a bonus': {
+                'Older than 25.225 gets a bonus': {
                   if: {
                     'person.age': { greaterThan: 25.225 }
                   },
