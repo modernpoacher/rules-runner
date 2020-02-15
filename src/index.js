@@ -56,44 +56,51 @@ export default class RulesRunner {
     return (
       Object
         .entries(expectations)
-        .every(([key, expected]) => {
+        .every(([key, expectation]) => {
           if (objectPath.has(accumulator, key)) {
             const actual = objectPath.get(accumulator, key)
 
-            return this.runTest(expected, actual)
+            return this.runTest(expectation, actual)
           }
+
+          throw new Error(`Unknown path "${key}"`)
         })
     )
   }
 
-  runTest (expected = {}, ...args) {
-    if (expected === null) throw new Error('Expectation is `null`')
+  runTest (expectation, ...args) {
+    if (expectation === null) throw new Error('Expectation is `null`')
+    if (expectation === undefined) throw new Error('Expectation is `undefined`')
 
-    if (isObject(expected)) {
-      const [
-        comparator
-      ] = Object.keys(expected)
+    if (isObject(expectation)) {
+      return (
+        Object
+          .entries(expectation)
+          .some(([key, value]) => {
+            if (Reflect.has(comparators, key)) {
+              const comparator = Reflect.get(comparators, key)
 
-      if (Reflect.has(comparators, comparator)) {
-        return Reflect.get(comparators, comparator).call(this, expected, ...args)
-      }
+              return comparator.call(this, { [key]: value }, ...args)
+            }
 
-      throw new Error(`Unknown comparator "${comparator}"`)
+            throw new Error(`Unknown comparator "${key}"`)
+          })
+      )
     }
 
-    if (isBoolean(expected)) {
+    if (isBoolean(expectation)) {
       const {
         boolean
       } = comparators
 
-      return boolean.call(this, expected, ...args)
+      return boolean.call(this, expectation, ...args)
     }
 
     const {
       equals
     } = comparators
 
-    return equals.call(this, expected, ...args)
+    return equals.call(this, expectation, ...args)
   }
 
   runOutcomes (outcomes = {}, accumulator = {}) {

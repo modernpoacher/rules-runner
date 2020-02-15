@@ -431,7 +431,7 @@ describe('`equals`', () => {
 
       const rulesRunner = new RulesRunner(config)
 
-      assert.throws(() => rulesRunner.run(values)) // , 'Throws `Expectation is null`')
+      assert.throws(() => rulesRunner.run(values)) // , 'Expectation is `null`')
     })
   })
 
@@ -452,7 +452,7 @@ describe('`equals`', () => {
 
       const rulesRunner = new RulesRunner(config)
 
-      assert.throws(() => rulesRunner.run(values)) // , 'Unknown comparator "undefined"')
+      assert.throws(() => rulesRunner.run(values)) // 'Expectation is `undefined`')
     })
   })
 })
