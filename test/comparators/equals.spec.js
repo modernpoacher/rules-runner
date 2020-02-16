@@ -417,7 +417,7 @@ describe('`equals`', () => {
   describe('Null', () => {
     it('throws', () => {
       const config = {
-        'Null profile gets a flag': {
+        'Null profile does not get a flag': {
           if: {
             'person.profile': null
           },
@@ -438,7 +438,7 @@ describe('`equals`', () => {
   describe('Undefined', () => {
     it('throws', () => {
       const config = {
-        'Null profile gets a flag': {
+        'Undefined profile does not get a flag': {
           if: {
             'person.profile': undefined
           },

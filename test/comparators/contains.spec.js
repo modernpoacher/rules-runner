@@ -5,7 +5,7 @@ describe('`contains`', () => {
   describe('The value is in `contains`', () => {
     it('populates the outcomes', () => {
       const config = {
-        'Anything to do with nursing is a good thing': {
+        'Anything to do with art is a good thing': {
           if: {
             job: { contains: 'Drawing' }
           },
@@ -27,7 +27,7 @@ describe('`contains`', () => {
   describe('The value is not in `contains`', () => {
     it('populates the outcomes', () => {
       const config = {
-        'Anything to do with nursing is a good thing': {
+        'Anything to do with art is a good thing': {
           if: {
             job: { contains: 'Drawing' }
           },
@@ -50,7 +50,7 @@ describe('`contains`', () => {
     describe('The value is in `contains`', () => {
       it('populates the outcomes', () => {
         const config = {
-          'Anything to do with nursing is a good thing': {
+          'Anything to do with art is a good thing': {
             if: {
               job: { contains: 'Drawing' }
             },
@@ -73,7 +73,7 @@ describe('`contains`', () => {
     describe('The value is not in `contains`', () => {
       it('populates the outcomes', () => {
         const config = {
-          'Anything to do with nursing is a good thing': {
+          'Anything to do with art is a good thing': {
             if: {
               job: { contains: 'Drawing' }
             },

@@ -5,7 +5,7 @@ describe('`between`', () => {
   describe('The value is equal to or greater than `lowerBound` and equal to or less than `upperBound`', () => {
     it('populates the outcome', () => {
       const config = {
-        'Any of these values win a prize': {
+        'Between these values win a prize': {
           if: {
             val: { between: { lowerBound: 20, upperBound: 30 } }
           },
@@ -27,7 +27,7 @@ describe('`between`', () => {
     describe('The value is less than `lowerBound`', () => {
       it('populates the outcome', () => {
         const config = {
-          'Any of these values win a prize': {
+          'Between these values win a prize': {
             if: {
               val: { between: { lowerBound: 20, upperBound: 30 } }
             },
@@ -35,7 +35,7 @@ describe('`between`', () => {
           }
         };
 
-        [{ val: 19 }, { val: -19 }, { val: 0 }]
+        [{ val: +19 }, { val: -19 }, { val: 0 }]
           .forEach((values) => {
             const rulesRunner = new RulesRunner(config)
             const { winsAPrize } = rulesRunner.run(values)
@@ -48,7 +48,7 @@ describe('`between`', () => {
     describe('The value is greater than `upperBound`', () => {
       it('populates the outcome', () => {
         const config = {
-          'Any of these values win a prize': {
+          'Between these values win a prize': {
             if: {
               val: { between: { lowerBound: 20, upperBound: 30 } }
             },
@@ -56,7 +56,7 @@ describe('`between`', () => {
           }
         };
 
-        [{ val: 31 }, { val: +31 }, { val: 100 }]
+        [{ val: -31 }, { val: +31 }, { val: 100 }]
           .forEach((values) => {
             const rulesRunner = new RulesRunner(config)
             const { winsAPrize } = rulesRunner.run(values)
@@ -71,7 +71,7 @@ describe('`between`', () => {
     describe('The value is equal to or greater than `lowerBound` and equal to or less than `upperBound`', () => {
       it('populates the outcome', () => {
         const config = {
-          'Any of these values win a prize': {
+          'Between these values win a prize': {
             if: {
               val: { between: { lowerBound: 20, upperBound: 30 } }
             },
@@ -94,7 +94,7 @@ describe('`between`', () => {
       describe('The value is below `lowerBound`', () => {
         it('populates the outcome', () => {
           const config = {
-            'Any of these values win a prize': {
+            'Between these values win a prize': {
               if: {
                 val: { between: { lowerBound: 20, upperBound: 30 } }
               },
@@ -103,7 +103,7 @@ describe('`between`', () => {
             }
           };
 
-          [{ val: 19 }, { val: -19 }, { val: 0 }]
+          [{ val: +19 }, { val: -19 }, { val: 0 }]
             .forEach((values) => {
               const rulesRunner = new RulesRunner(config)
               const { winsAPrize } = rulesRunner.run(values)
@@ -116,7 +116,7 @@ describe('`between`', () => {
       describe('The value is above `upperBound`', () => {
         it('populates the outcome', () => {
           const config = {
-            'Any of these values win a prize': {
+            'Between these values win a prize': {
               if: {
                 val: { between: { lowerBound: 20, upperBound: 30 } }
               },
@@ -125,7 +125,7 @@ describe('`between`', () => {
             }
           };
 
-          [{ val: 31 }, { val: +31 }, { val: 100 }]
+          [{ val: -31 }, { val: +31 }, { val: 100 }]
             .forEach((values) => {
               const rulesRunner = new RulesRunner(config)
               const { winsAPrize } = rulesRunner.run(values)
