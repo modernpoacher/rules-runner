@@ -1,4 +1,3 @@
-import cloneDeep from 'clone-deep'
 import objectPath from 'object-path'
 import {
   isBoolean,
@@ -17,12 +16,11 @@ function getArrayKey (key) {
 }
 
 export default class RulesRunner {
-  constructor (config, options = {}) {
+  constructor (config) {
     this.config = config
-    this.options = options
   }
 
-  run (values = {}) {
+  run (values = {}, decisions = {}) {
     return (
       Object
         .values(this.config)
@@ -30,7 +28,7 @@ export default class RulesRunner {
           if (Reflect.has(rule, 'if')) {
             const IF = Reflect.get(rule, 'if')
 
-            if (this.runTests(IF, accumulator)) {
+            if (this.runTests(IF, values)) {
               if (Reflect.has(rule, 'then')) {
                 const THEN = Reflect.get(rule, 'then')
 
@@ -48,7 +46,7 @@ export default class RulesRunner {
           }
 
           throw new Error('A rule must have an `if` and a `then`')
-        }, cloneDeep(values))
+        }, decisions)
     )
   }
 

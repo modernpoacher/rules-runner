@@ -16,7 +16,7 @@ describe('`lessThan`', () => {
       const values = { person: { age: 24 } }
 
       const rulesRunner = new RulesRunner(config)
-      const { person: { getsBonus } } = rulesRunner.run(values)
+      const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
       assert.equal(getsBonus, true)
     })
@@ -37,7 +37,7 @@ describe('`lessThan`', () => {
         const values = { person: { age: 25 } }
 
         const rulesRunner = new RulesRunner(config)
-        const { person: { getsBonus } } = rulesRunner.run(values)
+        const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
         assert.equal(getsBonus, undefined)
       })
@@ -57,7 +57,7 @@ describe('`lessThan`', () => {
         const values = { person: { age: 26 } }
 
         const rulesRunner = new RulesRunner(config)
-        const { person: { getsBonus } } = rulesRunner.run(values)
+        const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
         assert.equal(getsBonus, undefined)
       })
@@ -80,7 +80,7 @@ describe('`lessThan`', () => {
         const values = { person: { age: 24 } }
 
         const rulesRunner = new RulesRunner(config)
-        const { person: { getsBonus } } = rulesRunner.run(values)
+        const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
         assert.equal(getsBonus, true)
       })
@@ -102,7 +102,7 @@ describe('`lessThan`', () => {
           const values = { person: { age: 25 } }
 
           const rulesRunner = new RulesRunner(config)
-          const { person: { getsBonus } } = rulesRunner.run(values)
+          const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
           assert.equal(getsBonus, false)
         })
@@ -123,7 +123,7 @@ describe('`lessThan`', () => {
           const values = { person: { age: 26 } }
 
           const rulesRunner = new RulesRunner(config)
-          const { person: { getsBonus } } = rulesRunner.run(values)
+          const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
           assert.equal(getsBonus, false)
         })
@@ -147,7 +147,7 @@ describe('`lessThan`', () => {
           const values = { person: { age: '24' } }
 
           const rulesRunner = new RulesRunner(config)
-          const { person: { getsBonus } } = rulesRunner.run(values)
+          const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
           assert.equal(getsBonus, true)
         })
@@ -168,7 +168,7 @@ describe('`lessThan`', () => {
             const values = { person: { age: '25' } }
 
             const rulesRunner = new RulesRunner(config)
-            const { person: { getsBonus } } = rulesRunner.run(values)
+            const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -188,7 +188,7 @@ describe('`lessThan`', () => {
             const values = { person: { age: '26' } }
 
             const rulesRunner = new RulesRunner(config)
-            const { person: { getsBonus } } = rulesRunner.run(values)
+            const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -211,7 +211,7 @@ describe('`lessThan`', () => {
             const values = { person: { age: '24' } }
 
             const rulesRunner = new RulesRunner(config)
-            const { person: { getsBonus } } = rulesRunner.run(values)
+            const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
             assert.equal(getsBonus, true)
           })
@@ -233,7 +233,7 @@ describe('`lessThan`', () => {
               const values = { person: { age: '25' } }
 
               const rulesRunner = new RulesRunner(config)
-              const { person: { getsBonus } } = rulesRunner.run(values)
+              const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -254,7 +254,7 @@ describe('`lessThan`', () => {
               const values = { person: { age: '26' } }
 
               const rulesRunner = new RulesRunner(config)
-              const { person: { getsBonus } } = rulesRunner.run(values)
+              const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -278,7 +278,7 @@ describe('`lessThan`', () => {
           const values = { person: { age: '24.225' } }
 
           const rulesRunner = new RulesRunner(config)
-          const { person: { getsBonus } } = rulesRunner.run(values)
+          const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
           assert.equal(getsBonus, true)
         })
@@ -299,7 +299,7 @@ describe('`lessThan`', () => {
             const values = { person: { age: '25.225' } }
 
             const rulesRunner = new RulesRunner(config)
-            const { person: { getsBonus } } = rulesRunner.run(values)
+            const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -319,7 +319,7 @@ describe('`lessThan`', () => {
             const values = { person: { age: '26.225' } }
 
             const rulesRunner = new RulesRunner(config)
-            const { person: { getsBonus } } = rulesRunner.run(values)
+            const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
             assert.equal(getsBonus, undefined)
           })
@@ -342,7 +342,7 @@ describe('`lessThan`', () => {
             const values = { person: { age: '24.225' } }
 
             const rulesRunner = new RulesRunner(config)
-            const { person: { getsBonus } } = rulesRunner.run(values)
+            const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
             assert.equal(getsBonus, true)
           })
@@ -364,7 +364,7 @@ describe('`lessThan`', () => {
               const values = { person: { age: '25.225' } }
 
               const rulesRunner = new RulesRunner(config)
-              const { person: { getsBonus } } = rulesRunner.run(values)
+              const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })
@@ -385,7 +385,7 @@ describe('`lessThan`', () => {
               const values = { person: { age: '26.225' } }
 
               const rulesRunner = new RulesRunner(config)
-              const { person: { getsBonus } } = rulesRunner.run(values)
+              const { person: { getsBonus } = {} } = rulesRunner.run(values)
 
               assert.equal(getsBonus, false)
             })

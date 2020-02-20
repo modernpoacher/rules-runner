@@ -29,7 +29,7 @@ describe('`equals`', () => {
         }
 
         const rulesRunner = new RulesRunner(config)
-        const { status: { eligible } } = rulesRunner.run(values)
+        const { status: { eligible } = {} } = rulesRunner.run(values)
 
         assert.equal(eligible, 'Walmart-male-scholarship')
       })
@@ -97,7 +97,7 @@ describe('`equals`', () => {
           }
 
           const rulesRunner = new RulesRunner(config)
-          const { status: { eligible } } = rulesRunner.run(values)
+          const { status: { eligible } = {} } = rulesRunner.run(values)
 
           assert.equal(eligible, 'Walmart-male-scholarship')
         })
@@ -167,7 +167,7 @@ describe('`equals`', () => {
         }
 
         const rulesRunner = new RulesRunner(config)
-        const { status: { bonus } } = rulesRunner.run(values)
+        const { status: { bonus } = {} } = rulesRunner.run(values)
 
         assert.equal(bonus, 500)
       })
@@ -235,7 +235,7 @@ describe('`equals`', () => {
           }
 
           const rulesRunner = new RulesRunner(config)
-          const { status: { bonus } } = rulesRunner.run(values)
+          const { status: { bonus } = {} } = rulesRunner.run(values)
 
           assert.equal(bonus, 500)
         })
@@ -304,7 +304,7 @@ describe('`equals`', () => {
         }
 
         const rulesRunner = new RulesRunner(config)
-        const { status: { bonus } } = rulesRunner.run(values)
+        const { status: { bonus } = {} } = rulesRunner.run(values)
 
         assert.equal(bonus, 500)
       })
@@ -372,7 +372,7 @@ describe('`equals`', () => {
           }
 
           const rulesRunner = new RulesRunner(config)
-          const { status: { bonus } } = rulesRunner.run(values)
+          const { status: { bonus } = {} } = rulesRunner.run(values)
 
           assert.equal(bonus, 500)
         })
