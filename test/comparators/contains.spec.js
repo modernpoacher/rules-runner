@@ -17,7 +17,7 @@ describe('`contains`', () => {
         { job: 'Drawing specialist' }
       ].forEach((values) => {
         const rulesRunner = new RulesRunner(config)
-        const { status: { hasGoodJob } } = rulesRunner.run(values)
+        const { status: { hasGoodJob } = {} } = rulesRunner.run(values)
 
         assert.equal(hasGoodJob, true)
       })
@@ -63,7 +63,7 @@ describe('`contains`', () => {
           { job: 'Drawing specialist' }
         ].forEach((values) => {
           const rulesRunner = new RulesRunner(config)
-          const { status: { hasGoodJob } } = rulesRunner.run(values)
+          const { status: { hasGoodJob } = {} } = rulesRunner.run(values)
 
           assert.equal(hasGoodJob, true)
         })

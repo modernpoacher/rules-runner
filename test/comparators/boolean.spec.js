@@ -22,7 +22,7 @@ describe('`boolean`', () => {
       }
 
       const rulesRunner = new RulesRunner(config)
-      const { status: { getsPaid } } = rulesRunner.run(values)
+      const { status: { getsPaid } = {} } = rulesRunner.run(values)
 
       assert.equal(getsPaid, true)
     })
@@ -76,7 +76,7 @@ describe('`boolean`', () => {
       }
 
       const rulesRunner = new RulesRunner(config)
-      const { status: { getsPaid } } = rulesRunner.run(values)
+      const { status: { getsPaid } = {} } = rulesRunner.run(values)
 
       assert.equal(getsPaid, false)
     })
@@ -134,7 +134,7 @@ describe('`boolean`', () => {
         }
 
         const rulesRunner = new RulesRunner(config)
-        const { status: { getsPaid } } = rulesRunner.run(values)
+        const { status: { getsPaid } = {} } = rulesRunner.run(values)
 
         assert.equal(getsPaid, false)
       })
@@ -194,7 +194,7 @@ describe('`boolean`', () => {
         }
 
         const rulesRunner = new RulesRunner(config)
-        const { status: { getsPaid } } = rulesRunner.run(values)
+        const { status: { getsPaid } = {} } = rulesRunner.run(values)
 
         assert.equal(getsPaid, true)
       })
