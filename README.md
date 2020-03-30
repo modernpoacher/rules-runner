@@ -1,46 +1,44 @@
+# @modernpoacher/rules-runner
 
-[![travis build status](https://travis-ci.org/willrstern/rules-runner.svg?branch=master)](https://github.com/willrstern/rules-runner)
+Encapsulate rules in an easily comprehended JSON/JavaScript object literal format.
 
-# Introduction
-rules-runner allows you to cleanly abstract your rules away from your application code
-- run your dataset against a config JSON object
-- results can modify your dataset or can return a new dataset of outcomes
-- It's isomorphic and has minimal package dependencies - great for the browser and the server
+## Install
+`npm i -P @modernpoacher/rules-runner`
 
-# Installation
-`npm install rules-runner`
+## Examples
 
-# Examples
-```js
-var Rules = require("rules-runner");
+`if` the conditions are met `then` will execute.
 
-var config = {
-  "Must be 16 or older if no adult is present": {
-    //if ALL "tests" in the if statement match,
+```javascript
+const RulesRunner = require('@modernpoacher/rules-runner')
+
+const config = {
+  'Must be 16 or older if no adult is present': {
     if: {
-      "person.age": {
+      'person.age': {
         lessThan: 16
       },
-      "person.adultPresent": false
+      'person.adultPresent': false
     },
-    //process all of the outcomes
     then: {
-      "person.error": "Must be 16 or older if no adult is present",
-      "errors.all[]": "person"
+      'person.error': 'Must be 16 or older if no adult is present',
+      'errors.all[]': 'person'
     }
   },
-  "Must be employed": {
+  'Must be employed': {
     if: {
-      "company.isEmployed": false
+      'company.isEmployed': false
     },
     then: {
-      "company.error": "Must be employed",
-      "errors.all[]": "company" //add [] to the end of a key to push values onto an array
+      'company.error': 'Must be employed',
+      'errors.all[]': 'company' 
     }
-  };
-};
+  }
+}
 
-var data = {
+const rulesRunner = new RulesRunner(config)
+
+const values = {
   person: {
     age: 15,
     adultPresent: false
@@ -48,101 +46,127 @@ var data = {
   company: {
     isEmployed: false
   }
-};
+}
 
-var rules = new Rules(config);
-rules.run(data);
-assert.equal(data.person.error, "Must be 16 or older if no adult is present");
-assert.equal(data.company.error, "Must be employed");
-assert.deepEqual(data.errors.all, ["person", "company"]);
-//by default, rules modify data object
-//only want results leaving data unchanged? 
-//var results = rules.run(data, {rulesModifyData: false});
+rulesRunner.run(values)
+
+assert.equal(values.person.error, 'Must be 16 or older if no adult is present')
+assert.equal(values.company.error, 'Must be employed')
+assert.deepEqual(values.errors.all, ['person', 'company'])
 ```
 
+`if` the conditions are not met `otherwise` will execute.
 
-## Use an array of `if` statements to treat conditions as `else if` or `OR like`
+```javascript
+const RulesRunner = require('@modernpoacher/rules-runner')
 
-```js
-
-var config = {
-  "Person will be in house if person is tired or hungry": {
-    if: [
-      {"person.tired": true}, //if this matches
-      {"person.hungry": true} //OR if this matches
-    ],
-    then: {
-      "person.location": "house" //then run this
-    }
-  }
-};
-    
-var data = {
-  person: {
-    tired: false,
-    hungry: true
-  }
-};
-
-var rules = new Rules(config);
-rules.run(data);
-
-assert.equal(data.person.location, 'house');
-```
-
-## `otherwise` will process if no conditions match
-
-```js
-
-var config = {
-  "Person will be in house if person is tired or hungry": {
-    if: [
-      {"person.tired": true},
-      {"person.hungry": true}
-    ],
-    then: {
-      "person.location": "house"
+const config = {
+  'Person will be in house if person is tired or hungry': {
+    if: {
+      'person.age': {
+        lessThan: 16
+      },
+      'person.adultPresent': false
     },
-    otherwise: { // if all conditions are false
-      "person.location": 'work'
+    then: {
+      'person.location': 'house'
+    },
+    otherwise: { 
+      'person.location': 'work'
     }
   }
-};
-var data = {
+}
+
+const rulesRunner = new RulesRunner(config)
+
+const values = {
   person: {
-    tired: false,
-    hungry: false
+    age: 17,
+    adultPresent: true
   }
-};
+}
 
-var rules = new Rules(config);
-rules.run(data);
+rulesRunner.run(values)
 
-assert.equal(data.person.location, 'work');
+assert.equal(values.person.location, 'work')
 ```
 
-# Comparators/Tests
-- **between**: `"person.age": {between: [1, 20]}`
-- **equality/scalar values**: `"person.exists": true` `"person.firstName": "John"`
-- **contains**: `"person.name": {contains: "Jr"}`` (also checks for values in arrays)
-- **greaterThan**: `"person.age": {greaterThan: 20}`
-- **in**: `"person.state": {in: ["CA", "TX", "NY"]}`
-- **lessThan**: `"person.age": {lessThan: 21}`
-- **matches**: `"person.name": {matches: "/(john|bob|mary)/i"i`
-- **not**: `"person.state": {not: "CA"}`, `"person.state": {not: {in: ["CA", "TX"]}}`
+## Comparators
 
-# Options
-- **caseSensitive**
-  - default: `true`
-  - `contains` and `equals` ignore case
-- **rulesModifyData**
-  - default: `true`
-  - matching rules modify original data set `rules.run()` returns modified dataset
-  - when `false`, rules create a new object, which gets returned
-- **strict**
-  - default: `false`
-  - useful for debugging. when `true`, if a rule path (i.e. `if: "person.age"`) isn't found in data, an error is thrown
-  - when `false`, a rule path that isn't set in data evaluates to `undefined`
-- **stringNumbers**:
-  - default: `true`
-  - `greaterThan`, `lessThan`, and `between` comparators will parse numbers.  `in` will match with `==` instead of `===`
+- equals
+
+```javascript
+'person.exists': true
+```
+
+```javascript
+'person.firstName': 'John'
+```
+
+```javascript
+'person.age': 21
+```
+
+- boolean
+
+```javascript
+'person.exists': false
+```
+
+- between
+
+```javascript
+'person.age': { between: [1, 20] }
+```
+
+- contains
+
+```javascript
+'person.name': { contains: 'Jr' }
+```
+
+- lessThan
+
+```javascript
+'person.age': { lessThan: 21 }
+```
+
+- greaterThan
+
+```javascript
+'person.age': { greaterThan: 20 }
+```
+
+- oneOf
+
+```javascript
+'person.state': { oneOf: ['CA', 'TX', 'NY'] }
+```
+
+- anyOf
+
+```javascript
+'person.state': { anyOf: ['CA', 'TX', 'NY'] }
+```
+
+- allOf
+
+```javascript
+'person.state': { allOf: ['CA', 'TX', 'NY'] }
+```
+
+- matches
+
+```javascript
+'person.name': { matches: '/(john|bob|mary)/i' }
+```
+
+- not
+
+```javascript
+'person.state': { not: 'CA' }`
+```
+
+```javascript
+'person.state': { not: { oneOf: ['CA', 'TX'] } }
+```
