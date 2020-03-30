@@ -1,0 +1,57 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: Authenticate with NPM
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+      - node/with-cache:
+          steps:
+            - run:
+                name: Install
+                command: npm install
+            - run:
+                name: Test
+                command: npm test
+  publish:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: Authenticate with NPM
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+      - run:
+          name: Install
+          command: npm install
+      - run:
+          name: Publish package to NPM
+          command: |
+            set -e
+
+            NAME=$(node -p "require('./package.json').name")
+            VERSION=$(node -p "require('./package.json').version")
+            PUBLISHED_VERSION=$(npm view $NAME version)
+
+            if [ "$VERSION" != "$PUBLISHED_VERSION" ]
+            then
+              npm publish
+            fi
+
+workflows:
+    test-and-publish:
+      jobs:
+        - test
+        - publish:
+            requires:
+              - test
+            filters:
+              tags:
+                only: /^v.*/
+              branches:
+                only: master
