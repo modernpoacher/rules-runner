@@ -1,2 +1,11 @@
+.circleci
+
+.editorconfig
+.eslintignore
 .eslintrc
+
+# NPM
+.npmignore
+.npmrc
+
 test

@@ -30,7 +30,7 @@ jobs:
           name: Install
           command: npm install
       - run:
-          name: Publish package to NPM
+          name: Publish to NPM to NPM
           command: |
             set -e
 
