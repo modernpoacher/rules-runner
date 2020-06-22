@@ -24,6 +24,14 @@
     "business rules engine"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/modernpoacher/rules-runner",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/modernpoacher/rules-runner.git"
+  },
+  "bugs": {
+    "url": "http://github.com/modernpoacher/rules-runner/issues"
+  },
   "main": "./index.js",
   "scripts": {
     "prepublishOnly": "npm run lint:fix && npm run babel",
@@ -37,13 +45,8 @@
     "test": "mocha test --recursive -r @babel/register",
     "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
   },
-  "homepage": "https://github.com/modernpoacher/rules-runner",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/modernpoacher/rules-runner.git"
-  },
-  "bugs": {
-    "url": "http://github.com/modernpoacher/rules-runner/issues"
+  "dependencies": {
+    "object-path": "^0.11.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -65,7 +68,9 @@
     "husky": "^4.2.3",
     "mocha": "^7.1.1"
   },
-  "dependencies": {
-    "object-path": "^0.11.4"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
   }
 }
