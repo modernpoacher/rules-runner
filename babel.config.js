@@ -14,7 +14,9 @@ debug.enable(DEBUG)
 function env () {
   log({ NODE_ENV })
 
-  return NODE_ENV === 'production'
+  return (
+    NODE_ENV === 'production'
+  )
 }
 
 const presets = [
