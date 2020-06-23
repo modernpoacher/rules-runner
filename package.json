@@ -34,7 +34,7 @@
   },
   "main": "./index.js",
   "scripts": {
-    "prepare": "npm run clean && cross-env NODE_ENV=production npm run build",
+    "prepare": "cross-env NODE_ENV=production npm run build",
     "install": "npm run prepare",
     "prebuild": "npm run clean",
     "build": "npm run babel",
@@ -45,7 +45,7 @@
     "lint": "eslint src test *.js",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register",
-    "pre-commit": "npm run lint && npm test && npm run clean && npm run build && git add lib"
+    "pre-commit": "npm run lint && npm test && npm run build && git add lib"
   },
   "dependencies": {
     "debug": "^4.1.1",
