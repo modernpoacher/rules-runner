@@ -1,6 +1,14 @@
+import debug from '@modernpoacher/rules-runner/common/debug'
+
 import { toNumber } from '@modernpoacher/rules-runner/common'
 
-export default function ({ between: { lowerBound, upperBound } = {} }, actual) {
+const log = debug('@modernpoacher/rules-runner:comparators:between')
+
+log('`between` is awake')
+
+export default function between ({ between: { lowerBound, upperBound } = {} }, actual) {
+  log('between')
+
   let l
   try {
     l = toNumber(lowerBound)

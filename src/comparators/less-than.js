@@ -1,6 +1,14 @@
+import debug from '@modernpoacher/rules-runner/common/debug'
+
 import { toNumber } from '@modernpoacher/rules-runner/common'
 
-export default function ({ lessThan } = {}, actual) {
+const log = debug('@modernpoacher/rules-runner:comparators:less-than')
+
+log('`lessThan` is awake')
+
+export default function lessThan ({ lessThan } = {}, actual) {
+  log('lessThan')
+
   let l
   try {
     l = toNumber(lessThan)

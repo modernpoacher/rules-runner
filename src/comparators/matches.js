@@ -1,6 +1,14 @@
+import debug from '@modernpoacher/rules-runner/common/debug'
+
 import { toRegExp, toString } from '@modernpoacher/rules-runner/common'
 
-export default function ({ matches } = {}, actual) {
+const log = debug('@modernpoacher/rules-runner:comparators:matches')
+
+log('`matches` is awake')
+
+export default function matches ({ matches } = {}, actual) {
+  log('matches')
+
   let p
   try {
     p = toRegExp(matches)

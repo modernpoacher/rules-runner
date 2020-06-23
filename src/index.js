@@ -1,9 +1,15 @@
+import debug from '@modernpoacher/rules-runner/common/debug'
+
 import objectPath from 'object-path'
 import {
   isBoolean,
   isObject
 } from './common'
 import * as comparators from './comparators'
+
+const log = debug('@modernpoacher/rules-runner')
+
+log('`rules-runner` is awake')
 
 const hasArrayKey = (key) => /^(.*)\[\]$/.test(key)
 

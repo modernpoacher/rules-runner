@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  test:
+  lint_and_test:
     executor:
       name: node/default
     steps:
@@ -16,8 +16,11 @@ jobs:
                 name: Install
                 command: npm install
             - run:
+                name: Lint
+                command: npm run lint
+            - run:
                 name: Test
-                command: npm test
+                command: npm run test
   publish:
     executor:
       name: node/default
@@ -36,19 +39,19 @@ jobs:
 
             if [ "$VERSION" != "$PUBLISHED_VERSION" ]
             then
-              npm install
+              npm ci
               npm publish
             fi
 
 workflows:
-    test-and-publish:
-      jobs:
-        - test
-        - publish:
-            requires:
-              - test
-            filters:
-              tags:
-                only: /^v.*/
-              branches:
-                only: master
+  commit-workflow:
+    jobs:
+      - lint_and_test
+      - publish:
+          requires:
+            - lint_and_test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              only: master

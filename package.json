@@ -34,18 +34,21 @@
   },
   "main": "./index.js",
   "scripts": {
-    "prepublishOnly": "npm run lint:fix && npm run babel",
+    "prepare": "npm run clean && cross-env NODE_ENV=production npm run build",
+    "install": "npm run prepare",
     "prebuild": "npm run clean",
     "build": "npm run babel",
+    "build:watch": "npm run babel:watch",
     "clean": "rimraf lib",
     "babel": "babel src -d lib",
     "babel:watch": "npm run babel -- -w",
     "lint": "eslint src test *.js",
     "lint:fix": "npm run lint -- --fix",
-    "test": "mocha test --recursive -r @babel/register",
-    "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
+    "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register",
+    "pre-commit": "npm run lint && npm test && npm run clean && npm run build && git add lib"
   },
   "dependencies": {
+    "debug": "^4.1.1",
     "object-path": "^0.11.4"
   },
   "devDependencies": {
@@ -58,6 +61,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.3.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-import-resolver-babel-module": "^5.1.2",
@@ -66,7 +70,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
-    "mocha": "^8.0.1"
+    "mocha": "^8.0.1",
+    "rimraf": "^3.0.2"
   },
   "husky": {
     "hooks": {

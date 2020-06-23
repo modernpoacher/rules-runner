@@ -1,6 +1,14 @@
+import debug from '@modernpoacher/rules-runner/common/debug'
+
 import { toString } from '@modernpoacher/rules-runner/common'
 
-export default function ({ contains }, actual) {
+const log = debug('@modernpoacher/rules-runner:comparators:contains')
+
+log('`contains` is awake')
+
+export default function contains ({ contains }, actual) {
+  log('contains')
+
   let c
   try {
     c = toString(contains)

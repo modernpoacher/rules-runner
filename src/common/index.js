@@ -1,14 +1,24 @@
+import debug from './debug'
+
+const log = debug('@modernpoacher/rules-runner:common')
+
+log('`rules-runner` is awake')
+
 export const isBoolean = (v) => (typeof v === 'boolean' || v === 'true' || v === 'false')
 
 export const isObject = (v) => (v || false).constructor === Object && !Array.isArray(v)
 
 export function toNull (v) {
+  log('toNull')
+
   if (v === null || v === 'null') return null
 
   throw new Error('Invalid `null`')
 }
 
 export function toRegExp (v) {
+  log('toRegExp')
+
   if (v instanceof RegExp) return v
 
   if (typeof v === 'string') {
@@ -27,6 +37,8 @@ export function toRegExp (v) {
 }
 
 export function toBoolean (v) {
+  log('toBoolean')
+
   if (typeof v === 'boolean') return v
   if (v === 'true') return true
   if (v === 'false') return false
@@ -35,6 +47,8 @@ export function toBoolean (v) {
 }
 
 export function toString (v) {
+  log('toString')
+
   if (typeof v === 'string') return v
   if (typeof v === 'number') return String(v)
 
@@ -42,6 +56,8 @@ export function toString (v) {
 }
 
 export function toNumber (v) {
+  log('toNumber')
+
   if (typeof v === 'number') return v
 
   if (v) {
