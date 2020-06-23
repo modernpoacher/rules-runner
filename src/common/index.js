@@ -1,4 +1,4 @@
-import debug from './debug'
+import debug from 'debug'
 
 const log = debug('@modernpoacher/rules-runner:common')
 

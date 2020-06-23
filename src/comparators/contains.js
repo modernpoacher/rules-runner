@@ -1,4 +1,4 @@
-import debug from '@modernpoacher/rules-runner/common/debug'
+import debug from 'debug'
 
 import { toString } from '@modernpoacher/rules-runner/common'
 
