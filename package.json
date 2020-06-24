@@ -24,6 +24,9 @@
     "business rules engine"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=12.18.1"
+  },
   "homepage": "https://github.com/modernpoacher/rules-runner",
   "repository": {
     "type": "git",
@@ -34,8 +37,7 @@
   },
   "main": "./index.js",
   "scripts": {
-    "prepare": "cross-env NODE_ENV=production npm run build",
-    "install": "npm run prepare",
+    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
     "prebuild": "npm run clean",
     "build": "npm run babel",
     "build:watch": "npm run babel:watch",
