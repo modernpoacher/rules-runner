@@ -2,6 +2,15 @@
   "name": "@modernpoacher/rules-runner",
   "version": "2.0.11",
   "description": "A business rules engine for Node",
+  "keywords": [
+    "business rules",
+    "business",
+    "rules",
+    "engine",
+    "rules engine",
+    "business rules engine"
+  ],
+  "main": "./index.js",
   "author": "Modern Poacher <modernpoacher@modernpoacher.com>",
   "contributors": [
     {
@@ -15,27 +24,18 @@
       "url": "http://github.com/modernpoacher/"
     }
   ],
-  "keywords": [
-    "business rules",
-    "business",
-    "rules",
-    "engine",
-    "rules engine",
-    "business rules engine"
-  ],
   "license": "MIT",
   "engines": {
     "node": ">=12.18.1"
   },
-  "homepage": "https://github.com/modernpoacher/rules-runner",
   "repository": {
     "type": "git",
     "url": "git://github.com/modernpoacher/rules-runner.git"
   },
+  "homepage": "https://github.com/modernpoacher/rules-runner",
   "bugs": {
     "url": "http://github.com/modernpoacher/rules-runner/issues"
   },
-  "main": "./index.js",
   "scripts": {
     "prepublishOnly": "cross-env NODE_ENV=production npm run build",
     "prebuild": "npm run clean",
