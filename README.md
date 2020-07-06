@@ -31,7 +31,7 @@ const config = {
     },
     then: {
       'company.error': 'Must be employed',
-      'errors.all[]': 'company' 
+      'errors.all[]': 'company'
     }
   }
 }
@@ -71,7 +71,7 @@ const config = {
     then: {
       'person.location': 'house'
     },
-    otherwise: { 
+    otherwise: {
       'person.location': 'work'
     }
   }
