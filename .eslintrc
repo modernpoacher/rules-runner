@@ -4,9 +4,17 @@
     "node": true,
     "es2020": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
+  },
+  "plugins": [
+    "standard"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
