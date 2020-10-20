@@ -11,6 +11,7 @@
     "business rules engine"
   ],
   "main": "./index.js",
+  "types": "./types/index.d.ts",
   "author": "Modern Poacher <modernpoacher@modernpoacher.com>",
   "contributors": [
     {
