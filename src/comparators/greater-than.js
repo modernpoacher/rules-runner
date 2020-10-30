@@ -6,7 +6,7 @@ const log = debug('@modernpoacher/rules-runner:comparators:greater-than')
 
 log('`greaterThan` is awake')
 
-export default function greaterThan ({ greaterThan } = {}, actual) {
+export default function greaterThan ({ greaterThan }, actual) {
   log('greaterThan')
 
   let g

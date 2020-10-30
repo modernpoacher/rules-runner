@@ -6,7 +6,7 @@ const log = debug('@modernpoacher/rules-runner:comparators:less-than')
 
 log('`lessThan` is awake')
 
-export default function lessThan ({ lessThan } = {}, actual) {
+export default function lessThan ({ lessThan }, actual) {
   log('lessThan')
 
   let l
