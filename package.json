@@ -12,7 +12,7 @@
   ],
   "main": "./index.js",
   "types": "./types/index.d.ts",
-  "author": "Modern Poacher <modernpoacher@modernpoacher.com>",
+  "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "contributors": [
     {
       "name": "Will Stern",
