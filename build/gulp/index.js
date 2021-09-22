@@ -4,7 +4,7 @@ import {
   exec
 } from 'child_process'
 
-const log = debug('@@modernpoacher/rules-runner:build:gulp:pre-commit')
+const log = debug('@modernpoacher/rules-runner:build:gulp:pre-commit')
 
 log('`@modernpoacher/rules-runner` is awake')
 
