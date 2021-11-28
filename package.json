@@ -1,6 +1,6 @@
 {
   "name": "@modernpoacher/rules-runner",
-  "version": "2.1.50",
+  "version": "2.1.51",
   "description": "A business rules engine for Node",
   "keywords": [
     "business rules",
@@ -52,7 +52,7 @@
     "pre-commit": "npm run lint && npm test && npm run build && git add lib && npm run gulp -- pre-commit"
   },
   "dependencies": {
-    "debug": "^4.3.2",
+    "debug": "^4.3.3",
     "object-path": "^0.11.8"
   },
   "devDependencies": {
