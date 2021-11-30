@@ -22,7 +22,7 @@ const presets = [
   [
     '@babel/env', {
       targets: {
-        node: '12.19.0'
+        node: '16.13.0'
       },
       useBuiltIns: 'usage',
       corejs: 3
