@@ -49,7 +49,8 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register",
     "gulp": "gulp --color",
-    "pre-commit": "npm run lint && npm test && npm run build && git add lib && npm run gulp -- pre-commit"
+    "pre-commit": "npm run lint && npm test && npm run build && git add lib",
+    "post-commit": "cross-env DEBUG=@modernpoacher/hooks,@modernpoacher/hooks:* npm run gulp -- post-commit"
   },
   "dependencies": {
     "debug": "^4.3.3",
@@ -62,6 +63,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/register": "^7.16.7",
+    "@modernpoacher/hooks": "^1.0.0",
     "babel-loader": "^8.2.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "chai": "^4.3.4",

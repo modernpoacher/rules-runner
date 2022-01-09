@@ -7,11 +7,11 @@ require('@babel/register')({
 const gulp = require('gulp')
 
 const {
-  default: preCommit
-} = require('./build/gulp')
+  default: postCommit
+} = require('@modernpoacher/hooks/lib/post-commit')
 
 gulp
-  .task('pre-commit', preCommit)
+  .task('post-commit', postCommit)
 
 gulp
-  .task('default', gulp.series('pre-commit'))
+  .task('default', gulp.series('post-commit'))
