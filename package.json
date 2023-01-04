@@ -75,7 +75,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "gulp": "^4.0.2",
-    "husky": "^8.0.2",
+    "husky": "^8.0.3",
     "mocha": "^10.2.0",
     "rimraf": "^3.0.2"
   }
