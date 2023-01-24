@@ -1,6 +1,6 @@
 {
   "name": "@modernpoacher/rules-runner",
-  "version": "2.1.380",
+  "version": "2.1.381",
   "description": "A business rules engine for Node",
   "keywords": [
     "business rules",
