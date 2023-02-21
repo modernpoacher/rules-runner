@@ -57,13 +57,13 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/preset-env": "^7.20.2",
-    "@babel/register": "^7.18.9",
-    "@modernpoacher/hooks": "^1.0.317",
+    "@babel/register": "^7.21.0",
+    "@modernpoacher/hooks": "^1.0.318",
     "babel-loader": "^9.1.2",
     "babel-plugin-module-resolver": "^5.0.0",
     "chai": "^4.3.7",
