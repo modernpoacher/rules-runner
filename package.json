@@ -63,7 +63,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/preset-env": "^7.21.4",
     "@babel/register": "^7.21.0",
-    "@modernpoacher/hooks": "^1.0.364",
+    "@modernpoacher/hooks": "^1.0.365",
     "babel-loader": "^9.1.2",
     "babel-plugin-module-resolver": "^5.0.0",
     "chai": "^4.3.7",
@@ -77,6 +77,6 @@
     "gulp": "^4.0.2",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
-    "rimraf": "^4.4.1"
+    "rimraf": "^5.0.0"
   }
 }
