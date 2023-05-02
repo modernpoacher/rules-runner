@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run post-commit
+npx cross-env DEBUG=@modernpoacher/hooks* node .husky/post-commit.mjs
