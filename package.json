@@ -11,7 +11,7 @@
     "business rules engine"
   ],
   "main": "./index.js",
-  "types": "./types/index.d.ts",
+  "types": "./index.d.ts",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "contributors": [
     {
