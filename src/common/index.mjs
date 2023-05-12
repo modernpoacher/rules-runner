@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('@modernpoacher/rules-runner:common')
+const log = debug('@modernpoacher/rules-runner/common')
 
 log('`rules-runner` is awake')
 

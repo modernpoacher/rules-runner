@@ -1,19 +1,19 @@
 import assert from 'assert'
-import RulesRunner from '@modernpoacher/rules-runner'
+import RulesRunner from '#rules-runner'
 
-describe('`oneOf`', () => {
-  describe('One item is an item in `oneOf`', () => {
+describe('`allOf`', () => {
+  describe('Every item is an item in `allOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'One of these values wins a prize': {
+        'All of these values wins a prize': {
           if: {
-            one: { oneOf: [1, 'a', true] }
+            all: { allOf: [1, 'a', true] }
           },
           then: { winsAPrize: true }
         }
       }
 
-      const values = { one: [2, 'b', true] }
+      const values = { all: [1, 'a', true] }
 
       const rulesRunner = new RulesRunner(config)
       const { winsAPrize } = rulesRunner.run(values)
@@ -22,18 +22,18 @@ describe('`oneOf`', () => {
     })
   })
 
-  describe('No item is an item in `oneOf`', () => {
+  describe('No item is an item in `allOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'One of these values wins a prize': {
+        'All of these values wins a prize': {
           if: {
-            one: { oneOf: [1, 'a', true] }
+            all: { allOf: [1, 'a', undefined] }
           },
           then: { winsAPrize: true }
         }
       }
 
-      const values = { one: [2, 'b', NaN] }
+      const values = { all: [2, 'b', NaN] }
 
       const rulesRunner = new RulesRunner(config)
       const { winsAPrize } = rulesRunner.run(values)
@@ -42,18 +42,18 @@ describe('`oneOf`', () => {
     })
   })
 
-  describe('Every item is an item in `oneOf`', () => {
+  describe('One item is an item in `allOf`', () => {
     it('populates the outcome', () => {
       const config = {
-        'One of these values wins a prize': {
+        'All of these values wins a prize': {
           if: {
-            one: { oneOf: [1, 'a', true] }
+            all: { allOf: [1, 'a', true] }
           },
           then: { winsAPrize: true }
         }
       }
 
-      const values = { one: [1, 'a', true] }
+      const values = { all: [2, 'b', true] }
 
       const rulesRunner = new RulesRunner(config)
       const { winsAPrize } = rulesRunner.run(values)
@@ -63,19 +63,19 @@ describe('`oneOf`', () => {
   })
 
   describe('Otherwise', () => {
-    describe('One item is an item in `oneOf`', () => {
+    describe('Every item is an item in `allOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'One of these values wins a prize': {
+          'All of these values wins a prize': {
             if: {
-              one: { oneOf: [1, 'a', true] }
+              all: { allOf: [1, 'a', true] }
             },
             then: { winsAPrize: true },
             otherwise: { winsAPrize: false }
           }
         }
 
-        const values = { one: [2, 'b', true] }
+        const values = { all: [1, 'a', true] }
 
         const rulesRunner = new RulesRunner(config)
         const { winsAPrize } = rulesRunner.run(values)
@@ -84,19 +84,19 @@ describe('`oneOf`', () => {
       })
     })
 
-    describe('No item is an item in `oneOf`', () => {
+    describe('No item is an item in `allOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'One of these values wins a prize': {
+          'All of these values wins a prize': {
             if: {
-              one: { oneOf: [1, 'a', true] }
+              all: { allOf: [1, 'a', undefined] }
             },
             then: { winsAPrize: true },
             otherwise: { winsAPrize: false }
           }
         }
 
-        const values = { one: [2, 'b', NaN] }
+        const values = { all: [2, 'b', NaN] }
         const rulesRunner = new RulesRunner(config)
         const { winsAPrize } = rulesRunner.run(values)
 
@@ -104,19 +104,19 @@ describe('`oneOf`', () => {
       })
     })
 
-    describe('Every item is an item in `oneOf`', () => {
+    describe('One item is an item in `allOf`', () => {
       it('populates the outcome', () => {
         const config = {
-          'One of these values wins a prize': {
+          'All of these values wins a prize': {
             if: {
-              one: { oneOf: [1, 'a', true] }
+              all: { allOf: [1, 'a', true] }
             },
             then: { winsAPrize: true },
             otherwise: { winsAPrize: false }
           }
         }
 
-        const values = { one: [1, 'a', true] }
+        const values = { all: [2, 'b', true] }
 
         const rulesRunner = new RulesRunner(config)
         const { winsAPrize } = rulesRunner.run(values)

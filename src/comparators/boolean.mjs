@@ -1,8 +1,8 @@
 import debug from 'debug'
 
-import { toBoolean } from '@modernpoacher/rules-runner/common'
+import { toBoolean } from '#rules-runner/common'
 
-const log = debug('@modernpoacher/rules-runner:comparators:boolean')
+const log = debug('@modernpoacher/rules-runner/comparators/boolean')
 
 log('`boolean` is awake')
 

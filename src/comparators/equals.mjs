@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('@modernpoacher/rules-runner:comparators:equals')
+const log = debug('@modernpoacher/rules-runner/comparators/equals')
 
 log('`equals` is awake')
 

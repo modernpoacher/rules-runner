@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('@modernpoacher/rules-runner:comparators:not')
+const log = debug('@modernpoacher/rules-runner/comparators/not')
 
 log('`not` is awake')
 

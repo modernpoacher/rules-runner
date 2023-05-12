@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "*.mts",
+        "*.cts"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "extends": "standard-with-typescript",
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
+}

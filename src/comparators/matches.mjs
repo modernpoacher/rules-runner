@@ -1,8 +1,8 @@
 import debug from 'debug'
 
-import { toRegExp, toString } from '@modernpoacher/rules-runner/common'
+import { toRegExp, toString } from '#rules-runner/common'
 
-const log = debug('@modernpoacher/rules-runner:comparators:matches')
+const log = debug('@modernpoacher/rules-runner/comparators/matches')
 
 log('`matches` is awake')
 

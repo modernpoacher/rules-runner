@@ -30,24 +30,10 @@ const presets = [
   ]
 ]
 
-const plugins = [
-  '@babel/proposal-export-default-from',
-  [
-    'module-resolver', {
-      alias: {
-        '@modernpoacher/rules-runner': './src'
-      }
-    }
-  ]
-]
-
 module.exports = (api) => {
   if (api) api.cache.using(env)
 
   return {
-    compact: true,
-    comments: false,
-    presets,
-    plugins
+    presets
   }
 }

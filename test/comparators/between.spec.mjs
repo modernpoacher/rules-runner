@@ -1,5 +1,5 @@
 import assert from 'assert'
-import RulesRunner from '@modernpoacher/rules-runner'
+import RulesRunner from '#rules-runner'
 
 describe('`between`', () => {
   describe('The value is equal to or greater than `lowerBound` and equal to or less than `upperBound`', () => {

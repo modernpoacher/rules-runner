@@ -10,8 +10,8 @@
     "rules engine",
     "business rules engine"
   ],
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./src/index.mjs",
+  "type": "module",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "contributors": [
     {
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=18.5.0"
   },
   "repository": {
     "type": "git",
@@ -38,40 +38,35 @@
     "url": "http://github.com/modernpoacher/rules-runner/issues"
   },
   "scripts": {
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
-    "prebuild": "npm run clean",
-    "build": "npm run babel",
-    "build:watch": "npm run babel:watch",
-    "clean": "rimraf lib",
-    "babel": "babel src -d lib",
-    "babel:watch": "npm run babel -- -w",
-    "lint": "eslint src test *.js",
+    "lint": "eslint src test --ext .mjs --ext .cjs --ext .mts --ext .cts",
     "lint:fix": "npm run lint -- --fix",
-    "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register"
+    "test": "cross-env NODE_ENV=test mocha test --recursive",
+    "prepare": "npx husky install"
   },
   "dependencies": {
     "debug": "^4.3.4",
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
-    "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/preset-env": "^7.21.5",
-    "@babel/register": "^7.21.0",
     "@modernpoacher/hooks": "^1.0.399",
-    "babel-plugin-module-resolver": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",
     "eslint": "^8.40.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-import-resolver-babel-module": "^5.3.2",
+    "eslint-config-standard-with-typescript": "^34.0.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.3",
-    "mocha": "^10.2.0",
-    "rimraf": "^5.0.0"
+    "mocha": "^10.2.0"
+  },
+  "imports": {
+    "#rules-runner/common": "./src/common/index.mjs",
+    "#rules-runner": "./src/index.mjs"
   }
 }

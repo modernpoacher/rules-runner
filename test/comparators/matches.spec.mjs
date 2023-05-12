@@ -1,5 +1,5 @@
 import assert from 'assert'
-import RulesRunner from '@modernpoacher/rules-runner'
+import RulesRunner from '#rules-runner'
 
 describe('`matches`', () => {
   describe('`matches` is a regular expression', () => {

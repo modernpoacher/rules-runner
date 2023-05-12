@@ -1,8 +1,8 @@
 import debug from 'debug'
 
-import { toString } from '@modernpoacher/rules-runner/common'
+import { toString } from '#rules-runner/common'
 
-const log = debug('@modernpoacher/rules-runner:comparators:contains')
+const log = debug('@modernpoacher/rules-runner/comparators/contains')
 
 log('`contains` is awake')
 

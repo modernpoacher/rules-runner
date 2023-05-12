@@ -1,8 +1,8 @@
 import debug from 'debug'
 
-import { toNumber } from '@modernpoacher/rules-runner/common'
+import { toNumber } from '#rules-runner/common'
 
-const log = debug('@modernpoacher/rules-runner:comparators:between')
+const log = debug('@modernpoacher/rules-runner/comparators/between')
 
 log('`between` is awake')
 

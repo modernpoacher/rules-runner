@@ -1,8 +1,8 @@
 import debug from 'debug'
 
-import { toNumber } from '@modernpoacher/rules-runner/common'
+import { toNumber } from '#rules-runner/common'
 
-const log = debug('@modernpoacher/rules-runner:comparators:less-than')
+const log = debug('@modernpoacher/rules-runner/comparators/less-than')
 
 log('`lessThan` is awake')
 

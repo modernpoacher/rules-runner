@@ -2,15 +2,18 @@
 
 .circleci
 .github
+.husky
 
 .editorconfig
 .eslintignore
 .eslintrc
-
-.gitignore
 
 test
 
 # NPM
 .npmignore
 .npmrc
+
+# Git
+.gitattributes
+.gitignore

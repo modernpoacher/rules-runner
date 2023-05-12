@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('@modernpoacher/rules-runner:comparators:any-of')
+const log = debug('@modernpoacher/rules-runner/comparators/any-of')
 
 log('`anyOf` is awake')
 

@@ -1,11 +1,13 @@
 import debug from 'debug'
 
 import objectPath from 'object-path'
+
 import {
   isBoolean,
   isObject
-} from './common'
-import * as comparators from './comparators'
+} from './common/index.mjs'
+
+import * as comparators from './comparators/index.mjs'
 
 const log = debug('@modernpoacher/rules-runner')
 
