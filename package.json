@@ -41,17 +41,17 @@
     "lint": "eslint src test --ext .mjs --ext .cjs --ext .mts --ext .cts",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive",
-    "prepare": "npx husky install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "debug": "^4.3.4",
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.8",
+    "@babel/core": "^7.22.1",
     "@babel/eslint-parser": "^7.21.8",
-    "@babel/preset-env": "^7.21.5",
-    "@modernpoacher/hooks": "^1.0.409",
+    "@babel/preset-env": "^7.22.2",
+    "@modernpoacher/hooks": "^1.0.411",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
     "chai": "^4.3.7",
