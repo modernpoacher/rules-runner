@@ -11,7 +11,7 @@ import * as comparators from './comparators/index.mjs'
 
 const log = debug('@modernpoacher/rules-runner')
 
-log('`rules-runner` is awake')
+log('`@modernpoacher/rules-runner` is awake')
 
 const hasArrayKey = (key) => /^(.*)\[\]$/.test(key)
 

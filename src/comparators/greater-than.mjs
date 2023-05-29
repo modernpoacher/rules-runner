@@ -4,7 +4,7 @@ import { toNumber } from '#rules-runner/common'
 
 const log = debug('@modernpoacher/rules-runner/comparators/greater-than')
 
-log('`greaterThan` is awake')
+log('`@modernpoacher/rules-runner` is awake')
 
 export default function greaterThan ({ greaterThan }, actual) {
   log('greaterThan')

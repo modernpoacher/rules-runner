@@ -4,7 +4,7 @@ import { toBoolean } from '#rules-runner/common'
 
 const log = debug('@modernpoacher/rules-runner/comparators/boolean')
 
-log('`boolean` is awake')
+log('`@modernpoacher/rules-runner` is awake')
 
 export default function boolean (expected, actual) {
   log('boolean')

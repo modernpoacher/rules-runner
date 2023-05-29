@@ -4,7 +4,7 @@ import { toRegExp, toString } from '#rules-runner/common'
 
 const log = debug('@modernpoacher/rules-runner/comparators/matches')
 
-log('`matches` is awake')
+log('`@modernpoacher/rules-runner` is awake')
 
 export default function matches ({ matches }, actual) {
   log('matches')

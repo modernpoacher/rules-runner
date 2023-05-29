@@ -2,7 +2,7 @@ import debug from 'debug'
 
 const log = debug('@modernpoacher/rules-runner/comparators/any-of')
 
-log('`anyOf` is awake')
+log('`@modernpoacher/rules-runner` is awake')
 
 export default function anyOf ({ anyOf: values = null }, actual) {
   log('anyOf')

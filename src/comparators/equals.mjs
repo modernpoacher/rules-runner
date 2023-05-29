@@ -2,7 +2,7 @@ import debug from 'debug'
 
 const log = debug('@modernpoacher/rules-runner/comparators/equals')
 
-log('`equals` is awake')
+log('`@modernpoacher/rules-runner` is awake')
 
 export default function equals (expected, actual) {
   log('equals')
