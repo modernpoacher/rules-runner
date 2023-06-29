@@ -38,7 +38,7 @@
     "url": "http://github.com/modernpoacher/rules-runner/issues"
   },
   "scripts": {
-    "lint": "eslint src test --ext .mjs --ext .cjs --ext .mts --ext .cts",
+    "lint": "eslint src test --ext .mjs,.cjs,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive",
     "prepare": "husky install"
@@ -51,7 +51,7 @@
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
-    "@modernpoacher/hooks": "^1.0.419",
+    "@modernpoacher/hooks": "^1.0.420",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "chai": "^4.3.7",
@@ -59,9 +59,6 @@
     "eslint": "^8.43.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-with-typescript": "^35.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.3",
     "mocha": "^10.2.0"
   },
