@@ -48,10 +48,10 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.7",
+    "@babel/core": "^7.22.8",
     "@babel/eslint-parser": "^7.22.7",
     "@babel/preset-env": "^7.22.7",
-    "@modernpoacher/hooks": "^1.0.424",
+    "@modernpoacher/hooks": "^1.0.425",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "chai": "^4.3.7",
