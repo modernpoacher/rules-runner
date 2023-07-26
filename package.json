@@ -54,7 +54,7 @@
     "@modernpoacher/hooks": "^1.0.426",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
-    "chai": "^4.3.7",
+    "chai": "^5.0.0-alpha.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.45.0",
     "eslint-config-standard": "^17.1.0",
