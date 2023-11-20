@@ -55,7 +55,7 @@
     "@babel/core": "^7.23.3",
     "@babel/eslint-parser": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
-    "@modernpoacher/hooks": "^1.0.446",
+    "@modernpoacher/hooks": "^1.0.447",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
     "chai": "^4.3.10",
