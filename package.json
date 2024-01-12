@@ -54,8 +54,8 @@
   "devDependencies": {
     "@babel/core": "^7.23.7",
     "@babel/eslint-parser": "^7.23.3",
-    "@babel/preset-env": "^7.23.7",
-    "@modernpoacher/hooks": "^1.0.455",
+    "@babel/preset-env": "^7.23.8",
+    "@modernpoacher/hooks": "^1.0.456",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
     "chai": "^5.0.0",
