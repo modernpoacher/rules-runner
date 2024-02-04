@@ -18,23 +18,21 @@ function env () {
   )
 }
 
-const presets = [
-  [
-    '@babel/env',
-{
-      targets: {
-        node: 'current'
-      },
-      useBuiltIns: 'usage',
-      corejs: 3
-    }
-  ]
-]
-
 module.exports = (api) => {
   if (api) api.cache.using(env)
 
   return {
-    presets
+    presets: [
+      [
+        '@babel/env',
+    {
+          targets: {
+            node: 'current'
+          },
+          useBuiltIns: 'usage',
+          corejs: 3
+        }
+      ]
+    ]
   }
 }
