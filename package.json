@@ -64,7 +64,7 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-with-typescript": "35.0.0",
     "husky": "^9.0.10",
-    "mocha": "^10.2.0"
+    "mocha": "^10.3.0"
   },
   "imports": {
     "#rules-runner/common": "./src/common/index.mjs",
