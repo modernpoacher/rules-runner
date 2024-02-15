@@ -45,7 +45,7 @@
     "lint": "eslint src test --ext .mjs,.cjs,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "debug": "^4.3.4",
