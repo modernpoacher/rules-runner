@@ -52,16 +52,16 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.5",
-    "@babel/eslint-parser": "^7.24.5",
-    "@babel/preset-env": "^7.24.5",
-    "@modernpoacher/hooks": "^1.0.475",
-    "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.9.0",
+    "@babel/core": "^7.24.6",
+    "@babel/eslint-parser": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@modernpoacher/hooks": "^1.0.476",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "chai": "^5.1.1",
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
-    "eslint-config-love": "^47.0.0",
+    "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
     "husky": "^9.0.11",
     "mocha": "^10.4.0"
