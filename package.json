@@ -15,7 +15,7 @@
   "author": {
     "name": "Jonathan Perry for Modern Poacher Limited",
     "email": "modernpoacher@modernpoacher.com",
-    "url": "http://modernpoacher.com"
+    "url": "https://modernpoacher.com"
   },
   "contributors": [
     {
@@ -55,7 +55,7 @@
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "@modernpoacher/hooks": "^1.0.480",
+    "@modernpoacher/hooks": "^1.0.481",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.14.1",
     "chai": "^5.1.1",
