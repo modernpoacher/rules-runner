@@ -52,12 +52,12 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.8",
+    "@babel/core": "^7.24.9",
     "@babel/eslint-parser": "^7.24.8",
     "@babel/preset-env": "^7.24.8",
-    "@modernpoacher/hooks": "^1.0.482",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
+    "@modernpoacher/hooks": "^1.0.483",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
     "chai": "^5.1.1",
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
