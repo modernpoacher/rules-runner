@@ -63,7 +63,7 @@
     "eslint": "8.57.0",
     "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
-    "husky": "^9.1.0",
+    "husky": "^9.1.1",
     "mocha": "^10.6.0"
   },
   "imports": {
