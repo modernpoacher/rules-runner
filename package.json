@@ -55,15 +55,15 @@
     "@babel/core": "^7.24.9",
     "@babel/eslint-parser": "^7.24.8",
     "@babel/preset-env": "^7.24.8",
-    "@modernpoacher/hooks": "^1.0.483",
+    "@modernpoacher/hooks": "^1.0.484",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.17.0",
-    "chai": "^5.1.1",
+    "chai": "^4.5.0",
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
     "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
-    "husky": "^9.1.1",
+    "husky": "^9.1.2",
     "mocha": "^10.7.0"
   },
   "imports": {
