@@ -13,3 +13,6 @@ node_modules
 
 # Deps
 .depsrc
+
+# Hooks
+.husky/hooks
