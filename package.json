@@ -57,7 +57,7 @@
     "@babel/preset-env": "^7.25.9",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
-    "chai": "^5.1.1",
+    "chai": "^5.1.2",
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
     "eslint-config-love": "47.0.0",
