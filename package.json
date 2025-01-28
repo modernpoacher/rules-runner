@@ -52,9 +52,9 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
+    "@babel/core": "^7.26.7",
     "@babel/eslint-parser": "^7.26.5",
-    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-env": "^7.26.7",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "chai": "^5.1.2",
@@ -63,7 +63,7 @@
     "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
     "husky": "^9.1.7",
-    "mocha": "^11.0.1"
+    "mocha": "^11.1.0"
   },
   "imports": {
     "#rules-runner": "./src/index.mjs",
