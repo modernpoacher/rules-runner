@@ -2,10 +2,10 @@
   "compilerOptions": {
     "module": "NodeNext",
     "target": "ESNext",
-    "moduleResolution": "NodeNext",
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
+    "moduleResolution": "NodeNext",
     "baseUrl": "."
   }
 }
