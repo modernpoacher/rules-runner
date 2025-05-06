@@ -35,9 +35,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/modernpoacher/rules-runner.git"
+    "url": "git+https://github.com/modernpoacher/rules-runner.git"
   },
-  "homepage": "https://github.com/modernpoacher/rules-runner",
+  "homepage": "https://github.com/modernpoacher/rules-runner#readme",
   "bugs": {
     "url": "http://github.com/modernpoacher/rules-runner/issues"
   },
