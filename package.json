@@ -63,7 +63,7 @@
     "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
     "husky": "^9.1.7",
-    "mocha": "^11.2.2"
+    "mocha": "^11.3.0"
   },
   "imports": {
     "#rules-runner": "./src/index.mjs",
