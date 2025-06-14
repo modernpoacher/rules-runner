@@ -52,8 +52,8 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.27.1",
-    "@babel/eslint-parser": "^7.27.1",
+    "@babel/core": "^7.27.4",
+    "@babel/eslint-parser": "^7.27.5",
     "@babel/preset-env": "^7.27.2",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
@@ -63,7 +63,7 @@
     "eslint-config-love": "47.0.0",
     "eslint-config-standard": "^17.1.0",
     "husky": "^9.1.7",
-    "mocha": "^11.4.0"
+    "mocha": "^11.6.0"
   },
   "imports": {
     "#rules-runner": "./src/index.mjs",
