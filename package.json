@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@sequencemedia/eslint-config-standard": "^0.2.125",
-    "@sequencemedia/eslint-config-typescript": "^0.1.216",
+    "@sequencemedia/eslint-config-typescript": "^0.1.217",
     "chai": "^6.2.2",
     "cross-env": "^10.1.0",
     "eslint": "9.38.0",
