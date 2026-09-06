@@ -52,18 +52,14 @@
     "object-path": "^0.11.8"
   },
   "devDependencies": {
-    "@babel/core": "7.29.7",
-    "@babel/eslint-parser": "7.29.7",
-    "@babel/preset-env": "7.29.7",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
+    "@sequencemedia/eslint-config-standard": "^0.2.125",
+    "@sequencemedia/eslint-config-typescript": "^0.1.216",
     "chai": "^6.2.2",
     "cross-env": "^10.1.0",
-    "eslint": "8.57.1",
-    "eslint-config-love": "47.0.0",
-    "eslint-config-standard": "^17.1.0",
+    "eslint": "9.38.0",
+    "globals": "^17.12.0",
     "husky": "^9.1.7",
-    "mocha": "^11.7.6"
+    "mocha": "^12.0.0"
   },
   "imports": {
     "#rules-runner": "./src/index.mjs",
