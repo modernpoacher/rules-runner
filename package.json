@@ -44,7 +44,7 @@
   "scripts": {
     "lint": "eslint src test --ext .mjs,.cjs,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky",
+    "prepare": "node husky.mjs",
     "test": "cross-env NODE_ENV=test mocha test --recursive"
   },
   "dependencies": {
