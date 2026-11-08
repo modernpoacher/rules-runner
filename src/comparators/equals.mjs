@@ -4,6 +4,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/equals')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {unknown} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function equals (expected, actual) {
   log('equals')
 

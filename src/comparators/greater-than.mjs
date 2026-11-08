@@ -6,6 +6,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/greater-than')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ greaterThan: unknown }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function greaterThan ({ greaterThan }, actual) {
   log('greaterThan')
 

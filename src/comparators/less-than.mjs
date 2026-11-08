@@ -6,6 +6,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/less-than')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ lessThan: unknown }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function lessThan ({ lessThan }, actual) {
   log('lessThan')
 

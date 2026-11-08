@@ -6,6 +6,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/contains')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ contains: unknown }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function contains ({ contains }, actual) {
   log('contains')
 

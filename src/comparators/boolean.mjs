@@ -6,6 +6,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/boolean')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {unknown} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function boolean (expected, actual) {
   log('boolean')
 

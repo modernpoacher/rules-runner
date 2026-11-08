@@ -4,10 +4,22 @@ const log = debug('@modernpoacher/rules-runner/common')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {unknown} v
+ * @returns {v is boolean | 'true' | 'false'} v is a boolean or string "true" or string "false"
+ */
 export const isBoolean = (v) => (typeof v === 'boolean' || v === 'true' || v === 'false')
 
+/**
+ * @param {unknown} v
+ * @returns {v is object}
+ */
 export const isObject = (v) => (v || false).constructor === Object && !Array.isArray(v)
 
+/**
+ * @param {unknown} v
+ * @returns {null}
+ */
 export function toNull (v) {
   log('toNull')
 
@@ -16,6 +28,10 @@ export function toNull (v) {
   throw new Error('Invalid `null`')
 }
 
+/**
+ * @param {unknown} v
+ * @returns {RegExp}
+ */
 export function toRegExp (v) {
   log('toRegExp')
 
@@ -27,7 +43,7 @@ export function toRegExp (v) {
         match,
         expression,
         flags
-      ] = v.match(/^\/(.*)\/(\w*)$/)
+      ] = v.match(/^\/(.*)\/(\w*)$/) ?? []
 
       if (match) return new RegExp(expression, flags)
     }
@@ -36,6 +52,10 @@ export function toRegExp (v) {
   throw new Error('Invalid `reg exp`')
 }
 
+/**
+ * @param {unknown} v
+ * @returns {boolean}
+ */
 export function toBoolean (v) {
   log('toBoolean')
 
@@ -46,15 +66,25 @@ export function toBoolean (v) {
   throw new Error('Invalid `boolean`')
 }
 
+/**
+ * @param {unknown} v
+ * @returns {string}
+ */
 export function toString (v) {
   log('toString')
 
   if (typeof v === 'string') return v
   if (typeof v === 'number') return String(v)
+  if (v === undefined) return 'undefined'
+  if (v instanceof Function || (v || false).constructor === Symbol) return String(v)
 
-  return JSON.stringify(v)
+  return String(JSON.stringify(v)) // `{ toJSON () { return undefined } }`
 }
 
+/**
+ * @param {unknown} v
+ * @returns {number}
+ */
 export function toNumber (v) {
   log('toNumber')
 

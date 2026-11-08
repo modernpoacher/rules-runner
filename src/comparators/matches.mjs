@@ -6,6 +6,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/matches')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ matches: unknown }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function matches ({ matches }, actual) {
   log('matches')
 

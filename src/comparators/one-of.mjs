@@ -4,6 +4,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/one-of')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ oneOf?: unknown[] | null }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function oneOf ({ oneOf: values = null }, actual) {
   log('oneOf')
 

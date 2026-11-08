@@ -1,9 +1,11 @@
+type ObjectType = Record<PropertyKey, unknown>
+
 declare class RulesRunner {
-  constructor (config?: object)
-  run (values?: object, decisions?: object): object
-  runTests (expectations?: object, values?: object): object
-  runTest (expectation?: object): object
-  runOutcomes (outcomes?: object, accumulator?: object): object
+  constructor (config: ObjectType)
+  run (values?: ObjectType, decisions?: ObjectType): ObjectType
+  runTests (expectations?: ObjectType, values?: ObjectType): boolean
+  runTest (expectation: unknown, ...actual: unknown[]): boolean
+  runOutcomes (outcomes?: ObjectType, accumulator?: ObjectType): ObjectType
 }
 
 declare module '@modernpoacher/rules-runner' {

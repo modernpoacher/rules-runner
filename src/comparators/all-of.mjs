@@ -4,6 +4,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/all-of')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ allOf?: unknown[] | null }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function allOf ({ allOf: values = null }, actual) {
   log('allOf')
 

@@ -33,18 +33,18 @@ export default class RulesRunner {
       Object
         .values(this.config)
         .reduce((accumulator, rule) => {
-          if (Reflect.has(rule, 'if')) {
-            const IF = Reflect.get(rule, 'if')
+          if ('if' in rule) {
+            const { if: IF } = rule
 
             if (this.runTests(IF, values)) {
-              if (Reflect.has(rule, 'then')) {
-                const THEN = Reflect.get(rule, 'then')
+              if ('then' in rule) {
+                const { then: THEN } = rule
 
                 return this.runOutcomes(THEN, accumulator)
               }
             } else {
-              if (Reflect.has(rule, 'otherwise')) {
-                const OTHERWISE = Reflect.get(rule, 'otherwise')
+              if ('otherwise' in rule) {
+                const { otherwise: OTHERWISE } = rule
 
                 return this.runOutcomes(OTHERWISE, accumulator)
               }
@@ -83,8 +83,8 @@ export default class RulesRunner {
         Object
           .entries(expectation)
           .some(([key, value]) => {
-            if (Reflect.has(comparators, key)) {
-              const comparator = Reflect.get(comparators, key)
+            if (key in comparators) {
+              const comparator = comparators[key]
 
               return comparator.call(this, { [key]: value }, ...actual)
             }

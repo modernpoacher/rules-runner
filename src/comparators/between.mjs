@@ -6,6 +6,11 @@ const log = debug('@modernpoacher/rules-runner/comparators/between')
 
 log('`@modernpoacher/rules-runner` is awake')
 
+/**
+ * @param {{ between?: { lowerBound?: unknown, upperBound?: unknown } }} expected
+ * @param {unknown} actual
+ * @returns {boolean}
+ */
 export default function between ({ between: { lowerBound, upperBound } = {} }, actual) {
   log('between')
 
