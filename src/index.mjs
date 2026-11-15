@@ -16,9 +16,7 @@ log('`@modernpoacher/rules-runner` is awake')
 const hasArrayKey = (key) => /^(.*)\[\]$/.test(key)
 
 function getArrayKey (key) {
-  const [,
-    arrayKey
-  ] = key.match(/^(.*)\[\]$/)
+  const [, arrayKey] = key.match(/^(.*)\[\]$/)
 
   return arrayKey
 }
